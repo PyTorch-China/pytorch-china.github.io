@@ -1,0 +1,8 @@
+collections:
+  features:
+    output: false
+  ecosystem:
+    output: true
+    permalink: /ecosystem/:path/
+  resources:
+    output: false
