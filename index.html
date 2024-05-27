@@ -17,18 +17,48 @@ display-news-banner: true
   </div>
 </div>
 
+<div class="main-content-wrapper">
+
+  <div class="container homepage-box-module">
+    <div class="row">
+      <div class="col-md">
+        <h3>2024 PyTorch峰会</h3>
+        <p>
+          PyTorch 2024 峰会的提案征集已启动。提前注册可享受早鸟优惠。
+        </p>
+        <p>
+          <a href="https://hubs.la/Q02sr1cw0">详情和指南</a>
+        </p>
+      </div>
+      <div class="col-md">
+        <h3>PyTorch 2.3</h3>
+        <p>
+          PyTorch 2.3 引入了在 torch.compile 中支持用户定义的 Triton 内核，并改进了使用原生 PyTorch 进行大语言模型(LLMs)训练的功能。
+        </p>
+        <p>
+          <a href="/blog/pytorch2-3/">了解更多</a>
+        </p>
+      </div>
+      <div class="col-md">
+        <h3>加入会员</h3>
+        <p>
+          成为 PyTorch 基金会的重要一员，共同构建和塑造 AI 的未来。
+        </p>
+        <p>
+          <a href="/join">加入</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Start Load Tweets -->
 
 <div id="twitter-widget">
-  <a class="twitter-timeline"
-    href="https://twitter.com/pytorch"
-    data-height="0"
-    data-chrome="noheader nofooter noborders transparent noscrollbar"
-    data-link-color="#e44c2c"
-    data-tweet-limit="3"
-    data-border-color="#a80000"
-    data-dnt="true">
+  <a class="twitter-timeline" href="https://twitter.com/pytorch" data-height="0"
+    data-chrome="noheader nofooter noborders transparent noscrollbar" data-link-color="#e44c2c" data-tweet-limit="3"
+    data-border-color="#a80000" data-dnt="true">
   </a>
 </div>
 
@@ -41,4 +71,5 @@ display-news-banner: true
 <!-- Load JS for pagination -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-<script list-id="news-items" display-count="1" pagination="true" src="{{ site.baseurl }}/assets/filter-hub-tags.js"></script>
+<script list-id="news-items" display-count="1" pagination="true"
+  src="{{ site.baseurl }}/assets/filter-hub-tags.js"></script>
