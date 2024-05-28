@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: L5Kit
-summary: ML Prediction, Planning and Simulation for Self-Driving built on PyTorch.
+summary: 基于 PyTorch 的自动驾驶 ML 预测、规划和仿真
 link: https://github.com/lyft/l5kit
-summary-home: ML Prediction, Planning and Simulation for Self-Driving built on PyTorch.
+summary-home: 基于 PyTorch 的自动驾驶 ML 预测、规划和仿真
 featured-home: false
 github-id: lyft/l5kit
 date-added: 1/10/21

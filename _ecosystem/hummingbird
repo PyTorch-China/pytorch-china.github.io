@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Hummingbird
-summary: Hummingbird compiles trained ML models into tensor computation for faster inference.
+summary: Hummingbird 将训练好的机器学习模型编译成张量计算，以实现更快的推理。
 link: https://github.com/microsoft/hummingbird
-summary-home: Hummingbird compiles trained ML models into tensor computation for faster inference.
+summary-home: Hummingbird 将训练好的机器学习模型编译成张量计算，以实现更快的推理。
 featured-home: false
 github-id: microsoft/hummingbird
 date-added: 6/17/20

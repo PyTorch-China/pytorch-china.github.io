@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: PopTorch
-summary: The PopTorch interface library is a simple wrapper for running PyTorch programs directly on Graphcore IPUs.
+summary: PopTorch 接口库是一个简单的包装器，可直接在 Graphcore IPUs 上运行 PyTorch 程序。
 link: https://docs.graphcore.ai/projects/poptorch-user-guide/en/latest/
-summary-home: The PopTorch interface library is a simple wrapper for running PyTorch programs directly on Graphcore IPUs.
+summary-home: PopTorch 接口库是一个简单的包装器，可直接在 Graphcore IPUs 上运行 PyTorch 程序。
 featured-home: false
 github-id: graphcore/poptorch
 date-added: 3/23/21

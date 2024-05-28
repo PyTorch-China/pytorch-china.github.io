@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: fastai
-summary: fastai is a library that simplifies training fast and accurate neural nets using modern best practices.
+summary: fastai利用现代最佳实践简化了训练快速而准确的神经网络。
 link: https://docs.fast.ai
 order: 5
-summary-home: fastai is a library that simplifies training fast and accurate neural nets using modern best practices.
+summary-home: fastai利用现代最佳实践简化了训练快速而准确的神经网络。
 featured-home: false
 redirect_to: https://docs.fast.ai
 github-id: fastai/fastai

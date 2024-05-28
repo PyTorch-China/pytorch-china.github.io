@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Ensemble-Pytorch
-summary: A unified ensemble framework for PyTorch to improve the performance and robustness of your deep learning model.
+summary: 一个统一的 PyTorch 集成框架，旨在提高深度学习模型的性能和鲁棒性。
 link: https://ensemble-pytorch.readthedocs.io
-summary-home: A unified ensemble framework for PyTorch to improve the performance and robustness of your deep learning model.
+summary-home: 一个统一的 PyTorch 集成框架，旨在提高深度学习模型的性能和鲁棒性。
 featured-home: false
 github-id: TorchEnsemble-Community/Ensemble-Pytorch
 date-added: 06/02/21

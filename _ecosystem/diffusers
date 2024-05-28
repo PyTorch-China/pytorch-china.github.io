@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Diffusers
-summary: Diffusers provides pretrained diffusion models across multiple modalities, such as vision and audio, and serves as a modular toolbox for inference and training of diffusion models.
+summary: Diffusers 提供了跨多种模态的预训练扩散模型，如视觉和音频，并作为一个模块化工具箱，用于扩散模型的推理和训练。
 link: https://huggingface.co/docs/diffusers 
-summary-home: Diffusers provides pretrained diffusion models across multiple modalities, such as vision and audio, and serves as a modular toolbox for inference and training of diffusion models.
+summary-home: Diffusers 提供了跨多种模态的预训练扩散模型，如视觉和音频，并作为一个模块化工具箱，用于扩散模型的推理和训练。
 featured-home: false
 github-id: huggingface/diffusers
 date-added: 6/1/23

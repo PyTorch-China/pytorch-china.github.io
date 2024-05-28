@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: TorchOpt
-summary: TorchOpt is a PyTorch-based library for efficient differentiable optimization.
+summary: TorchOpt 是一个基于 PyTorch 的高效可微分优化库。
 link: https://torchopt.readthedocs.io/en/latest/# 
-summary-home: TorchOpt is a PyTorch-based library for efficient differentiable optimization.
+summary-home: TorchOpt 是一个基于 PyTorch 的高效可微分优化库。
 featured-home: false
 github-id: metaopt/TorchOpt
 date-added: 6/1/23

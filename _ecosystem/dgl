@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: DGL
-summary: Deep Graph Library (DGL) is a Python package built for easy implementation of graph neural network model family, on top of PyTorch and other frameworks.
+summary: Deep Graph Library (DGL) 是一个基于 PyTorch 和其他框架构建的 Python 包，用于轻松实现图神经网络模型家族。
 link: https://www.dgl.ai
-summary-home: Deep Graph Library (DGL) is a Python package built for easy implementation of graph neural network model family, on top of PyTorch and other frameworks.
+summary-home: Deep Graph Library (DGL) 是一个基于 PyTorch 和其他框架构建的 Python 包，用于轻松实现图神经网络模型家族。
 featured-home: false
 github-id: dmlc/dgl
 date-added: 3/3/20

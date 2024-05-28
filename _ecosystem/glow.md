@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: Glow
-summary: Glow is a ML compiler that accelerates the performance of deep learning frameworks on different hardware platforms.
+summary: Glow 是一个机器学习编译器，可以加速不同硬件平台上深度学习框架的性能。
 link: https://github.com/pytorch/glow
 order: 7
-summary-home: Glow is a ML compiler that accelerates the performance of deep learning frameworks on different hardware platforms.
+summary-home: Glow 是一个机器学习编译器，可以加速不同硬件平台上深度学习框架的性能。
 featured-home: false
 logo-class: tool
 redirect_to: https://github.com/pytorch/glow

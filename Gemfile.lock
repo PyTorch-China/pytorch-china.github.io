@@ -267,7 +267,6 @@ PLATFORMS
   x86_64-darwin-20
 
 DEPENDENCIES
-  execjs (= 2.7.0)
   github-pages
   jekyll-autoprefixer
   jekyll-feed

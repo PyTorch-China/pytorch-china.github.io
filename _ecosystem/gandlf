@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: GaNDLF
-summary: A generalizable application framework for segmentation, regression, and classification using PyTorch
+summary: 使用 PyTorch 的分割、回归和分类的通用应用框架
 link: https://mlcommons.github.io/GaNDLF/
-summary-home: A generalizable application framework for segmentation, regression, and classification using PyTorch
+summary-home: 使用 PyTorch 的分割、回归和分类的通用应用框架
 featured-home: false
 github-id: mlcommons/GaNDLF
 date-added: 05/07/21

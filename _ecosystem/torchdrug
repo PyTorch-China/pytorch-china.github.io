@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: torchdrug
-summary: A powerful and flexible machine learning platform for drug discovery.
+summary: 一个强大而灵活的药物发现机器学习平台
 link: https://torchdrug.ai/
-summary-home: A powerful and flexible machine learning platform for drug discovery.
+summary-home: 一个强大而灵活的药物发现机器学习平台
 featured-home: false
 github-id: DeepGraphLearning/torchdrug
 date-added: 08/19/21

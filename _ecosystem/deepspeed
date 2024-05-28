@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: DeepSpeed
-summary: DeepSpeed is a deep learning optimization library that makes distributed training easy, efficient, and effective.
+summary: DeepSpeed 是一个深度学习优化库，使分布式训练变得简单、高效和有效。
 link: https://www.deepspeed.ai/
-summary-home: DeepSpeed is a deep learning optimization library that makes distributed training easy, efficient, and effective.
+summary-home: DeepSpeed 是一个深度学习优化库，使分布式训练变得简单、高效和有效。
 featured-home: false
 github-id: microsoft/DeepSpeed
 date-added: 11/13/20

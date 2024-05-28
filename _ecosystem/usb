@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: USB
-summary: USB is a Pytorch-based Python package for Semi-Supervised Learning (SSL). It is easy-to-use/extend, affordable to small groups, and comprehensive for developing and evaluating SSL algorithms.
+summary: USB 是一个基于 PyTorch 的 Python 包，用于半监督学习（SSL）。它易于使用/扩展，适用于小团队，是开发和评估 SSL 算法的全面工具。
 link: https://usb.readthedocs.io/ 
-summary-home: USB is a Pytorch-based Python package for Semi-Supervised Learning (SSL). It is easy-to-use/extend, affordable to small groups, and comprehensive for developing and evaluating SSL algorithms.
+summary-home: USB 是一个基于 PyTorch 的 Python 包，用于半监督学习（SSL）。它易于使用/扩展，适用于小团队，是开发和评估 SSL 算法的全面工具。
 featured-home: false
 github-id: microsoft/Semi-supervised-learning
 date-added: 6/1/23

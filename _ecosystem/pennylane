@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: PennyLane
-summary: PennyLane is a library for quantum ML, automatic differentiation, and optimization of hybrid quantum-classical computations.
+summary: PennyLane 是一个用于量子机器学习、自动微分和混合量子-经典计算优化的库。
 link: https://pennylane.ai/
 order: 12
-summary-home: PennyLane is a library for quantum ML, automatic differentiation, and optimization of hybrid quantum-classical computations.
+summary-home: PennyLane 是一个用于量子机器学习、自动微分和混合量子-经典计算优化的库。
 featured-home: false
 redirect_to: https://pennylane.ai/
 github-id: PennyLaneAI/pennylane

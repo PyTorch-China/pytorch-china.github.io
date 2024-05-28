@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Ray
-summary: Ray is a fast and simple framework for building and running distributed applications.
+summary: Ray 是一个用于构建和运行分布式应用程序的快速简单的框架
 link: https://github.com/ray-project/ray
-summary-home: Ray is a fast and simple framework for building and running distributed applications.
+summary-home: Ray 是一个用于构建和运行分布式应用程序的快速简单的框架
 featured-home: false
 github-id: ray-project/ray
 date-added: 8/20/20

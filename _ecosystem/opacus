@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Opacus
-summary: Train PyTorch models with Differential Privacy 
+summary: 使用差分隐私训练 PyTorch 模型
 link: https://opacus.ai/
-summary-home: Train PyTorch models with Differential Privacy
+summary-home: 使用差分隐私训练 PyTorch 模型
 featured-home: false
 github-id: pytorch/opacus
 date-added: 10/29/20

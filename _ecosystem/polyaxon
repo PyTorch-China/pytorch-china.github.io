@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Polyaxon
-summary: Polyaxon is a platform for building, training, and monitoring large-scale deep learning applications.
+summary: Polyaxon 是一个用于构建、训练和监控大规模深度学习应用的平台。
 link: https://github.com/polyaxon/polyaxon
-summary-home: Polyaxon is a platform for building, training, and monitoring large-scale deep learning applications.
+summary-home: Polyaxon 是一个用于构建、训练和监控大规模深度学习应用的平台。
 featured-home: false
 github-id: polyaxon/polyaxon
 date-added: 9/17/20

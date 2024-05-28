@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Colossal-LLaMA-2
-summary: A complete and open-sourced solution for injecting domain-specific knowledge into pre-trained LLM.
+summary: 用于将领域特定知识注入预训练的语言模型，完整、开源的解决方案。
 link: https://github.com/hpcaitech/ColossalAI/tree/main/applications/Colossal-LLaMA-2
-summary-home: A complete and open-sourced solution for injecting domain-specific knowledge into pre-trained LLM.
+summary-home: 用于将领域特定知识注入预训练的语言模型，完整、开源的解决方案。
 featured-home: false
 github-id: hpcaitech/ColossalAI
 date-added: 1/24/24

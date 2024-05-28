@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: FuseMedML
-summary: FuseMedML is a python framework accelerating ML based discovery in the medical field by encouraging code reuse
+summary: FuseMedML 是一个 Python 框架，通过鼓励代码复用，加速了医学领域基于机器学习的发现。
 link: https://github.com/BiomedSciAI/fuse-med-ml
-summary-home: FuseMedML is a python framework accelerating ML based discovery in the medical field by encouraging code reuse
+summary-home: FuseMedML 是一个 Python 框架，通过鼓励代码复用，加速了医学领域基于机器学习的发现。
 featured-home: false
 github-id: BiomedSciAI/fuse-med-ml
 date-added: 02/16/23

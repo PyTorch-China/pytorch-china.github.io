@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: PyTorch-NLP
-summary: Basic Utilities for PyTorch Natural Language Processing (NLP).
+summary: PyTorch 自然语言处理（NLP）的基本实用工具。
 link: https://pytorchnlp.readthedocs.io
-summary-home: Basic Utilities for PyTorch Natural Language Processing (NLP).
+summary-home: PyTorch 自然语言处理（NLP）的基本实用工具。
 featured-home: false
 github-id: PetrochukM/PyTorch-NLP
 date-added: 4/6/20

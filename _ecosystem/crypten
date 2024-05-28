@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: CrypTen
-summary: CrypTen is a framework for Privacy Preserving ML. Its goal is to make secure computing techniques accessible to ML practitioners.
+summary: CrypTen 是一个隐私保护机器学习框架。其目标是使安全计算技术易用于机器学习从业者。
 link: https://github.com/facebookresearch/CrypTen
 order: 5
-summary-home: CrypTen is a framework for Privacy Preserving ML. Its goal is to make secure computing techniques accessible to ML practitioners.
+summary-home: CrypTen 是一个隐私保护机器学习框架。其目标是使安全计算技术易用于机器学习从业者。
 featured-home: false
 redirect_to: https://github.com/facebookresearch/CrypTen
 github-id: facebookresearch/CrypTen

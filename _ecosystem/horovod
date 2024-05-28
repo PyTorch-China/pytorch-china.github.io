@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: Horovod
-summary: Horovod is a distributed training library for deep learning frameworks. Horovod aims to make distributed DL fast and easy to use.
+summary: Horovod 是一个针对深度学习框架的分布式训练库。Horovod 的目标是使分布式深度学习变得快速且易于使用。
 link: http://horovod.ai
 order: 9
-summary-home: Horovod is a distributed training library for deep learning frameworks. Horovod aims to make distributed DL fast and easy to use.
+summary-home: Horovod 是一个针对深度学习框架的分布式训练库。Horovod 的目标是使分布式深度学习变得快速且易于使用。
 featured-home: false
 redirect_to: http://horovod.ai
 github-id: horovod/horovod

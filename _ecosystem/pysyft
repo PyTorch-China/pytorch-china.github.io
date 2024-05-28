@@ -1,7 +1,7 @@
 ---
 layout: ecosystem_detail
 title: PySyft
-summary: PySyft is a Python library for encrypted, privacy preserving deep learning.
+summary: PySyft 是一个用于加密、隐私保护深度学习的 Python 库。
 link: https://github.com/OpenMined/PySyft
 order: 14
 redirect_to: https://github.com/OpenMined/PySyft

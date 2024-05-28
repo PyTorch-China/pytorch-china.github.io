@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Hydra
-summary: A framework for elegantly configuring complex applications.
+summary: 一个优雅配置复杂应用程序的框架。
 link: https://hydra.cc/
-summary-home: A framework for elegantly configuring complex applications.
+summary-home: 一个优雅配置复杂应用程序的框架。
 featured-home: false
 github-id: facebookresearch/hydra
 date-added: 1/6/20

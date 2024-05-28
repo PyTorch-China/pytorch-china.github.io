@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: neural-compressor
-summary: Intel® Neural Compressor provides unified APIs for network compression technologies for faster inference
+summary: Intel® Neural Compressor 提供了统一的 API，用于网络压缩技术，以实现更快的推理。
 link: https://intel.github.io/neural-compressor/
-summary-home: Intel® Neural Compressor provides unified APIs for network compression technologies for faster inference
+summary-home: Intel® Neural Compressor 提供了统一的 API，用于网络压缩技术，以实现更快的推理。
 featured-home: false
 github-id: intel/neural-compressor
 date-added: 03/28/22

@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: pystiche
-summary: pystiche is a framework for Neural Style Transfer (NST) built upon PyTorch.
+summary: pystiche 是一个基于 PyTorch 构建的 Neural style transfer（NST）框架。
 link: https://github.com/pystiche/pystiche
-summary-home: pystiche is a framework for Neural Style Transfer (NST) built upon PyTorch.
+summary-home: pystiche 是一个基于 PyTorch 构建的 Neural style transfer（NST）框架。
 featured-home: false
 github-id: pystiche/pystiche
 date-added: 5/7/21

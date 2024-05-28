@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: depyf
-summary: depyf is a tool to help users understand and adapt to PyTorch compiler torch.compile.
+summary: depyf 是一个帮助用户理解和适配 PyTorch 编译器 torch.compile 的工具。
 link: https://github.com/thuml/depyf
-summary-home: depyf is a tool to help users understand and adapt to PyTorch compiler torch.compile.
+summary-home: depyf 是一个帮助用户理解和适配 PyTorch 编译器 torch.compile 的工具。
 featured-home: false
 github-id: thuml/depyf
 date-added: 1/24/24

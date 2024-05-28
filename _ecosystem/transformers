@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Transformers
-summary: State-of-the-art Natural Language Processing for PyTorch.
+summary: PyTorch 的最先进的自然语言处理技术。
 link: https://github.com/huggingface/transformers
-summary-home: State-of-the-art Natural Language Processing for PyTorch.
+summary-home: PyTorch 的最先进的自然语言处理技术。
 featured-home: false
 github-id: huggingface/transformers
 date-added: 01/18/21

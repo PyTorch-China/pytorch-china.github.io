@@ -1,7 +1,7 @@
 ---
 layout: ecosystem_detail
 title: Ignite
-summary: Ignite is a high-level library for training neural networks in PyTorch. It helps with writing compact, but full-featured training loops.
+summary: Ignite 是一个用于在 PyTorch 中训练神经网络的高级库。它有助于编写简洁但功能齐全的训练循环。
 link: https://github.com/pytorch/ignite
 order: 10
 redirect_to: https://github.com/pytorch/ignite

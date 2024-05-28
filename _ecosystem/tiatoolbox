@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: TIAToolbox
-summary: TIAToolbox provides an easy-to-use API where researchers can use, adapt and create models for CPath.
+summary: TIAToolbox 提供了一个易于使用的 API，研究人员可以使用、调整和创建 CPath 模型。
 link: https://github.com/TissueImageAnalytics/tiatoolbox 
-summary-home: TIAToolbox provides an easy-to-use API where researchers can use, adapt and create models for CPath.
+summary-home: TIAToolbox 提供了一个易于使用的 API，研究人员可以使用、调整和创建 CPath 模型。
 featured-home: false
 github-id: TissueImageAnalytics/tiatoolbox
 date-added: 6/1/23

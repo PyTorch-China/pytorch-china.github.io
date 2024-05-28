@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: accelerate
-summary: 🚀 A simple way to train and use PyTorch models with multi-GPU, TPU, mixed-precision
+summary: 🚀 使用多GPU、TPU 和混合精度简单训练和使用 PyTorch 模型
 link: https://huggingface.co/docs/accelerate
-summary-home: 🚀 A simple way to train and use PyTorch models with multi-GPU, TPU, mixed-precision
+summary-home: 🚀 使用多GPU、TPU 和混合精度简单训练和使用PyTorch模型
 featured-home: false
 github-id: huggingface/accelerate
 date-added: 09/13/21

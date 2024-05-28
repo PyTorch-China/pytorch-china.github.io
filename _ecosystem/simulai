@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: SimulAI
-summary: SimulAI is basically a toolkit with pipelines for physics-informed machine learning.
+summary: SimulAI 基本上是一个带有物理信息机器学习管道的工具包。
 link: https://github.com/IBM/simulai
-summary-home: SimulAI is basically a toolkit with pipelines for physics-informed machine learning.
+summary-home: SimulAI 基本上是一个带有物理信息机器学习管道的工具包。
 featured-home: false
 github-id: IBM/simulai
 date-added: 1/24/24

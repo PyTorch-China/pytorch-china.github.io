@@ -1,7 +1,7 @@
 ---
 layout: ecosystem_detail
 title: Flair
-summary: Flair is a very simple framework for state-of-the-art natural language processing (NLP).
+summary: Flair 是一个非常简单的框架，用于实现最先进的自然语言处理（NLP）技术。
 link: https://github.com/flairNLP/flair
 order: 6
 redirect_to: https://github.com/flairNLP/flair

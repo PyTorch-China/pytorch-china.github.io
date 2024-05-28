@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Poutyne
-summary: Poutyne is a Keras-like framework for PyTorch and handles much of the boilerplating code needed to train neural networks.
+summary: Poutyne 是一个类似 Keras 的 PyTorch 框架，处理了训练神经网络所需的大部分样板代码。
 link: https://poutyne.org/
-summary-home: Poutyne is a Keras-like framework for PyTorch and handles much of the boilerplating code needed to train neural networks.
+summary-home: Poutyne 是一个类似 Keras 的 PyTorch 框架，处理了训练神经网络所需的大部分样板代码。
 featured-home: false
 github-id: GRAAL-Research/poutyne
 date-added: 2/13/20

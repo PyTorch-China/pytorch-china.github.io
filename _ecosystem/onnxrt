@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: ONNX Runtime
-summary: ONNX Runtime is a cross-platform inferencing and training accelerator.
+summary: ONNX Runtime 是一个跨平台的推理和训练加速器。
 link: https://github.com/microsoft/onnxruntime
-summary-home: ONNX Runtime is a cross-platform inferencing and training accelerator.
+summary-home: ONNX Runtime 是一个跨平台的推理和训练加速器。
 featured-home: false
 github-id: microsoft/onnxruntime
 date-added: 2/1/21

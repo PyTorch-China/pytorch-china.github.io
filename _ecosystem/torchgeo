@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: torchgeo
-summary: Datasets, transforms, and models for geospatial data
+summary: 地理空间数据的数据集、转换和模型
 link: https://github.com/microsoft/torchgeo
-summary-home: Datasets, transforms, and models for geospatial data
+summary-home: 地理空间数据的数据集、转换和模型
 featured-home: false
 github-id: microsoft/torchgeo
 date-added: 01/05/22

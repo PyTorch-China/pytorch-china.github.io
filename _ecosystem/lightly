@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Lightly
-summary: Lightly is a computer vision framework for self-supervised learning.
+summary: Lightly 是一个用于自监督学习的计算机视觉框架。
 link: https://github.com/lightly-ai/lightly
-summary-home: Lightly is a computer vision framework for self-supervised learning.
+summary-home: Lightly 是一个用于自监督学习的计算机视觉框架。
 featured-home: false
 github-id: lightly-ai/lightly
 date-added: 08/23/21

@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: ClinicaDL
-summary: Framework for reproducible classification of Alzheimer's Disease
+summary: 可重复分类阿尔茨海默病的框架
 link: https://clinicadl.readthedocs.io/
-summary-home: Framework for reproducible classification of Alzheimer's Disease
+summary-home: 可重复分类阿尔茨海默病的框架
 featured-home: false
 github-id: aramis-lab/AD-DL
 date-added: 05/07/21

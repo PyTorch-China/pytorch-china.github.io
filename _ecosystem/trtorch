@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Torch-TensorRT
-summary: PyTorch/TorchScript compiler for NVIDIA GPUs using TensorRT
+summary: PyTorch/TorchScript 编译器， 为NVIDIA GPU 上使用 TensorRT
 link: https://pytorch.org/TensorRT/
-summary-home: PyTorch/TorchScript compiler for NVIDIA GPUs using TensorRT
+summary-home: PyTorch/TorchScript 编译器， 为NVIDIA GPU 上使用 TensorRT
 featured-home: false
 github-id: NVIDIA/Torch-TensorRT
 date-added: 03/28/22

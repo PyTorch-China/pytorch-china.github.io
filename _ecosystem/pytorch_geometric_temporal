@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: PyTorch Geometric Temporal
-summary: PyTorch Geometric Temporal is a temporal (dynamic) extension library for PyTorch Geometric.
+summary: PyTorch Geometric Temporal 是 PyTorch Geometric 的时间（动态）扩展库。
 link: https://github.com/benedekrozemberczki/pytorch_geometric_temporal
-summary-home: PyTorch Geometric Temporal is a temporal (dynamic) extension library for PyTorch Geometric.
+summary-home: PyTorch Geometric Temporal 是 PyTorch Geometric 的时间（动态）扩展库。
 featured-home: false
 github-id: benedekrozemberczki/pytorch_geometric_temporal
 date-added: 4/11/21

@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: higher
-summary: higher is a library which facilitates the implementation of arbitrarily complex gradient-based meta-learning algorithms and nested optimisation loops with near-vanilla PyTorch.
+summary: higher 是一个库，它利用 PyTorch 简化了任意复杂的基于梯度的元学习算法和嵌套优化循环的实现。
 link: https://github.com/facebookresearch/higher
-summary-home: higher is a library which facilitates the implementation of arbitrarily complex gradient-based meta-learning algorithms and nested optimisation loops with near-vanilla PyTorch.
+summary-home: higher 是一个库，它利用 PyTorch 简化了任意复杂的基于梯度的元学习算法和嵌套优化循环的实现。
 featured-home: false
 github-id: facebookresearch/higher
 date-added: 5/21/20

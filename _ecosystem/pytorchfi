@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: pytorchfi
-summary: A runtime fault injection tool for PyTorch.
+summary: 一个用于 PyTorch 的运行时错误注入工具
 link: https://github.com/pytorchfi/pytorchfi
-summary-home: A runtime fault injection tool for PyTorch.
+summary-home: 一个用于 PyTorch 的运行时错误注入工具
 featured-home: false
 github-id: pytorchfi/pytorchfi
 date-added: 09/08/21

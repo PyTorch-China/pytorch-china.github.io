@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: PyTorch3D
-summary: PyTorch3D provides efficient, reusable components for 3D Computer Vision research with PyTorch.
+summary: PyTorch3D 提供了高效、可重复使用的组件，用于基于 PyTorch 的 3D 计算机视觉研究。
 link: https://pytorch3d.org/
-summary-home: PyTorch3D provides efficient, reusable components for 3D Computer Vision research with PyTorch.
+summary-home: PyTorch3D 提供了高效、可重复使用的组件，用于基于 PyTorch 的 3D 计算机视觉研究。
 featured-home: false
 github-id: facebookresearch/pytorch3d
 date-added: 3/27/20

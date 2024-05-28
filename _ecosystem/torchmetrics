@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: TorchMetrics
-summary: Machine learning metrics for distributed, scalable PyTorch applications.
+summary: 用于分布式、可扩展 PyTorch 应用程序的机器学习指标。
 link: https://github.com/PyTorchLightning/metrics
-summary-home: Machine learning metrics for distributed, scalable PyTorch applications.
+summary-home: 用于分布式、可扩展 PyTorch 应用程序的机器学习指标。
 featured-home: false
 github-id: PyTorchLightning/metrics
 date-added: 06/22/21

@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: TorchDrift
-summary: TorchDrift is a data and concept drift library for PyTorch. It lets you monitor your PyTorch models to see if they operate within spec.
+summary: TorchDrift 是一个用于 PyTorch 的数据和概念库。它让您可以监视您的 PyTorch 模型，以查看它们是否在规范范围内运行。
 link: https://torchdrift.org
-summary-home: TorchDrift is a data and concept drift library for PyTorch. It lets you monitor your PyTorch models to see if they operate within spec.
+summary-home: TorchDrift 是一个用于 PyTorch 的数据和概念库。它让您可以监视您的 PyTorch 模型，以查看它们是否在规范范围内运行。
 featured-home: false
 github-id: TorchDrift/TorchDrift
 date-added: 3/31/21

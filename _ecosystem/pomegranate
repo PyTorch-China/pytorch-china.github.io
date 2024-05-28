@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: pomegranate
-summary: pomegranate is a library of probabilistic models that is built in a modular manner and treats all models as the probability distributions that they are.
+summary: pomegranate 是一个概率模型库，以模块化方式构建，并将所有模型视为它们所代表的概率分布。
 link: https://pomegranate.readthedocs.io/en/latest/ 
-summary-home: pomegranate is a library of probabilistic models that is built in a modular manner and treats all models as the probability distributions that they are.
+summary-home: pomegranate 是一个概率模型库，以模块化方式构建，并将所有模型视为它们所代表的概率分布。
 featured-home: false
 github-id: jmschrei/pomegranate
 date-added: 6/1/23

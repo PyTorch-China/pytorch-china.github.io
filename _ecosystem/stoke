@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: stoke
-summary: A lightweight declarative PyTorch wrapper for context switching between devices, distributed modes, mixed-precision, and PyTorch extensions.
+summary: 一个轻量级的声明式 PyTorch 包装器，用于在设备之间切换上下文、分布式模式、混合精度和 PyTorch 扩展。
 link: https://fidelity.github.io/stoke/
-summary-home: A lightweight declarative PyTorch wrapper for context switching between devices, distributed modes, mixed-precision, and PyTorch extensions.
+summary-home: 一个轻量级的声明式 PyTorch 包装器，用于在设备之间切换上下文、分布式模式、混合精度和 PyTorch 扩展。
 featured-home: false
 github-id: fidelity/stoke
 date-added: 09/08/21

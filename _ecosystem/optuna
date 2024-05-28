@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Optuna
-summary: An open source hyperparameter optimization framework to automate hyperparameter search.
+summary: 一个开源的超参数优化框架，用于自动化超参数搜索。
 link: https://optuna.org/
-summary-home: An open source hyperparameter optimization framework to automate hyperparameter search.
+summary-home: 一个开源的超参数优化框架，用于自动化超参数搜索。
 featured-home: false
 github-id: optuna/optuna
 date-added: 4/6/20

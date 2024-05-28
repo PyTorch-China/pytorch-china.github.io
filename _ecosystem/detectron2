@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Detectron2
-summary: Detectron2 is FAIR's next-generation platform for object detection and segmentation.
+summary: Detectron2 是 Facebook AI Research（FAIR）的下一代对象检测和分割平台。
 link: https://github.com/facebookresearch/detectron2
-summary-home: Detectron2 is FAIR's next-generation platform for object detection and segmentation.
+summary-home: Detectron2 是 Facebook AI Research（FAIR）的下一代对象检测和分割平台。
 featured-home: false
 github-id: facebookresearch/detectron2
 date-added: 3/27/20

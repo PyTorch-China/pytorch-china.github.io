@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: forte
-summary: Forte is a toolkit for building NLP pipelines featuring composable components, convenient data interfaces, and cross-task interaction.
+summary: Forte 是一个构建自然语言处理（NLP）管道的工具包，具有可组合的组件、方便的数据接口和跨任务交互功能。
 link: https://github.com/asyml/forte
-summary-home: Forte is a toolkit for building NLP pipelines featuring composable components, convenient data interfaces, and cross-task interaction.
+summary-home: Forte 是一个构建自然语言处理（NLP）管道的工具包，具有可组合的组件、方便的数据接口和跨任务交互功能。
 featured-home: false
 github-id: asyml/forte
 date-added: 07/19/21

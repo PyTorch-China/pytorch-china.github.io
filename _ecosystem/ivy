@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: ivy
-summary: The Unified Machine Learning Framework
+summary: 统一的机器学习框架
 link: https://lets-unify.ai
-summary-home: The Unified Machine Learning Framework
+summary-home: 统一的机器学习框架
 featured-home: false
 github-id: unifyai/ivy
 date-added: 02/23/22

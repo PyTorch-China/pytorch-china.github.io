@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: padl
-summary: Pipeline Abstractions for Deep Learning in PyTorch
+summary: PyTorch 中的深度学习管道抽象
 link: https://lf1-io.github.io/padl/
-summary-home: Pipeline Abstractions for Deep Learning in PyTorch
+summary-home: PyTorch 中的深度学习管道抽象
 featured-home: false
 github-id: lf1-io/padl
 date-added: 03/28/22

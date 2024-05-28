@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: baal
-summary: baal (bayesian active learning) aims to implement active learning using metrics of uncertainty derived from approximations of bayesian posteriors in neural networks.
+summary: Baal（贝叶斯主动学习）旨在利用神经网络中贝叶斯后验的近似得出的不确定性指标来实现主动学习。
 link: https://baal.readthedocs.io/en/latest/
-summary-home: baal (bayesian active learning) aims to implement active learning using metrics of uncertainty derived from approximations of bayesian posteriors in neural networks.
+summary-home: Baal（贝叶斯主动学习）旨在利用神经网络中贝叶斯后验的近似得出的不确定性指标来实现主动学习。
 featured-home: false
 github-id: ElementAI/baal
 date-added: 3/19/20

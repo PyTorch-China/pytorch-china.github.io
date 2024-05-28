@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Catalyst
-summary: Catalyst helps you write compact, but full-featured deep learning and reinforcement learning pipelines with a few lines of code.
+summary: Catalyst 帮助您用几行代码编写简洁而功能丰富的深度学习和强化学习pipelines。
 link: https://github.com/catalyst-team/catalyst
-summary-home: Catalyst helps you write compact, but full-featured deep learning and reinforcement learning pipelines with a few lines of code.
+summary-home: Catalyst 帮助您用几行代码编写简洁而功能丰富的深度学习和强化学习pipelines。
 featured-home: false
 github-id: catalyst-team/catalyst
 date-added: 10/28/19

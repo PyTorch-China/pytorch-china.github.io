@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: AdaptDL
-summary: AdaptDL is a resource-adaptive deep learning training and scheduling framework.
+summary: AdaptDL 是一个资源自适应的深度学习训练和调度框架。
 link: https://github.com/petuum/adaptdl
-summary-home: AdaptDL is a resource-adaptive deep learning training and scheduling framework.
+summary-home: AdaptDL 是一个资源自适应的深度学习训练和调度框架。
 featured-home: false
 github-id: petuum/adaptdl
 date-added: 2/5/21

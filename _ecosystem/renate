@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Renate
-summary: Renate is a library providing tools for re-training pytorch models over time as new data becomes available.
+summary: Renate 是一个提供工具的库，用于随着新数据的可用性随时间重新训练 PyTorch 模型。
 link: https://renate.readthedocs.io/en/latest/ 
-summary-home: Renate is a library providing tools for re-training pytorch models over time as new data becomes available.
+summary-home: Renate 是一个提供工具的库，用于随着新数据的可用性随时间重新训练 PyTorch 模型。
 featured-home: false
 github-id: awslabs/renate
 date-added: 6/1/23

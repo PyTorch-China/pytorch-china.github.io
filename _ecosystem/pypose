@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: PyPose
-summary: PyPose is a robotics-oriented, PyTorch-based library that combines deep perceptual models with physics-based optimization techniques, so that users can focus on their novel applications.
+summary: PyPose 是一个面向机器人的基于 PyTorch 的库，结合了深度感知模型和基于物理的优化技术，使用户可以专注于他们的新颖应用。
 link: https://pypose.org 
-summary-home: PyPose is a robotics-oriented, PyTorch-based library that combines deep perceptual models with physics-based optimization techniques, so that users can focus on their novel applications.
+summary-home: PyPose 是一个面向机器人的基于 PyTorch 的库，结合了深度感知模型和基于物理的优化技术，使用户可以专注于他们的新颖应用。
 featured-home: false
 github-id: pypose/pypose
 date-added: 6/1/23

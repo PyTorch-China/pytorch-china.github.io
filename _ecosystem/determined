@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Determined
-summary: Determined is a platform that helps deep learning teams train models more quickly, easily share GPU resources, and effectively collaborate. 
+summary: Determined 是一个平台，帮助深度学习团队更快地训练模型，轻松共享 GPU 资源，并有效地协作。
 link: https://github.com/determined-ai/determined
-summary-home: Determined is a platform that helps deep learning teams train models more quickly, easily share GPU resources, and effectively collaborate.
+summary-home: Determined 是一个平台，帮助深度学习团队更快地训练模型，轻松共享 GPU 资源，并有效地协作。
 featured-home: false
 github-id: determined-ai/determined
 date-added: 9/8/20

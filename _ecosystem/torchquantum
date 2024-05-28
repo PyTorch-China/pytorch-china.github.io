@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: TorchQuantum
-summary: TorchQuantum is a quantum classical simulation framework based on PyTorch. It supports statevector, density matrix simulation and pulse simulation on different hardware platforms such as CPUs and GPUs.
+summary: TorchQuantum 是一个基于 PyTorch 的量子经典仿真框架。它支持在不同硬件平台上（如 CPU 和 GPU）进行状态向量、密度矩阵仿真和脉冲仿真。
 link: https://hanruiwanghw.wixsite.com/torchquantum 
-summary-home: TorchQuantum is a quantum classical simulation framework based on PyTorch. It supports statevector, density matrix simulation and pulse simulation on different hardware platforms such as CPUs and GPUs.
+summary-home: TorchQuantum 是一个基于 PyTorch 的量子经典仿真框架。它支持在不同硬件平台上（如 CPU 和 GPU）进行状态向量、密度矩阵仿真和脉冲仿真。
 featured-home: false
 github-id: mit-han-lab/torchquantum
 date-added: 6/1/23

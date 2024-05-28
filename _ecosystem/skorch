@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: skorch
-summary: skorch is a high-level library for PyTorch that provides full scikit-learn compatibility.
+summary: skorch 是一个针对 PyTorch 的高级库，提供完全兼容 scikit-learn 的功能。
 link: https://github.com/skorch-dev/skorch
 order: 17
-summary-home: skorch is a high-level library for PyTorch that provides full scikit-learn compatibility.
+summary-home: skorch 是一个针对 PyTorch 的高级库，提供完全兼容 scikit-learn 的功能。
 featured-home: true
 redirect_to: https://github.com/skorch-dev/skorch
 github-id: skorch-dev/skorch

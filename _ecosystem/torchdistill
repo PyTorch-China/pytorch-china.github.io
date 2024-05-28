@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: torchdistill
-summary: torchdistill is a coding-free framework built on PyTorch for reproducible deep learning and knowledge distillation studies.
+summary: torchdistill 是一个基于 PyTorch 构建的无需编码的框架，用于可复现的深度学习和研究。
 link: https://github.com/yoshitomo-matsubara/torchdistill
-summary-home: torchdistill is a coding-free framework built on PyTorch for reproducible deep learning and knowledge distillation studies.
+summary-home: torchdistill 是一个基于 PyTorch 构建的无需编码的框架，用于可复现的深度学习和研究。
 featured-home: false
 github-id: yoshitomo-matsubara/torchdistill
 date-added: 12/05/23

@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: avalanche
-summary: "Avalanche: an End-to-End Library for Continual Learning"
+summary: Avalanche：一个端到端的持续学习库
 link: http://avalanche.continualai.org
-summary-home: "Avalanche: an End-to-End Library for Continual Learning"
+summary-home: Avalanche：一个端到端的持续学习库
 featured-home: false
 github-id: ContinualAI/avalanche
 date-added: 02/23/22

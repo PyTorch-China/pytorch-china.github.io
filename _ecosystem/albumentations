@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Albumentations
-summary: Fast and extensible image augmentation library for different CV tasks like classification, segmentation, object detection and pose estimation.
+summary: 一种快速且可扩展的图像增强库，适用于不同的计算机视觉任务，如分类、分割、目标检测和姿态估计。
 link: https://github.com/albu/albumentations
-summary-home: Fast and extensible image augmentation library for different CV tasks like classification, segmentation, object detection and pose estimation.
+summary-home: 一种快速且可扩展的图像增强库，适用于不同的计算机视觉任务，如分类、分割、目标检测和姿态估计。
 featured-home: false
 github-id: albumentations-team/albumentations
 date-added: 10/28/19

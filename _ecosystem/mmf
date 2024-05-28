@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: MMF
-summary: A modular framework for vision & language multimodal research from Facebook AI Research (FAIR).
+summary: 一个来自 Facebook AI Research (FAIR) 的用于视觉与语言多模态研究的模块化框架。
 link: https://mmf.sh/
-summary-home: A modular framework for vision & language multimodal research from Facebook AI Research (FAIR).
+summary-home: 一个来自 Facebook AI Research (FAIR) 的用于视觉与语言多模态研究的模块化框架。
 featured-home: false
 github-id: facebookresearch/mmf
 date-added: 6/11/20

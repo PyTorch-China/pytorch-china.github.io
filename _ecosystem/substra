@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Substra
-summary: Substra is a federated learning Python library to run federated learning experiments at scale on real distributed data.
+summary: Substra 是一个联邦学习 Python 库，用于在真实的分布式数据上大规模运行联邦学习实验。
 link: https://github.com/Substra 
-summary-home: Substra is a federated learning Python library to run federated learning experiments at scale on real distributed data.
+summary-home: Substra 是一个联邦学习 Python 库，用于在真实的分布式数据上大规模运行联邦学习实验。
 featured-home: false
 github-id: substra
 date-added: 6/28/23

@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: TextBrewer
-summary: A PyTorch-based knowledge distillation toolkit for natural language processing
+summary: 一个基于 PyTorch 的自然语言处理工具包
 link: http://textbrewer.hfl-rc.com
-summary-home: A PyTorch-based knowledge distillation toolkit for natural language processing
+summary-home: 一个基于 PyTorch 的自然语言处理工具包
 featured-home: false
 github-id: airaria/TextBrewer
 date-added: 06/02/21

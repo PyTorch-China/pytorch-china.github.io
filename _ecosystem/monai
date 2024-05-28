@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: MONAI
-summary: MONAI provides domain-optimized foundational capabilities for developing healthcare imaging training workflows.
+summary: MONAI 提供了面向领域的基础能力，用于开发医疗影像训练工作流程。
 link: https://monai.io
-summary-home: MONAI provides domain-optimized foundational capabilities for developing healthcare imaging training workflows.
+summary-home: MONAI 提供了面向领域的基础能力，用于开发医疗影像训练工作流程。
 featured-home: false
 github-id: Project-MONAI/MONAI
 date-added: 5/1/20

@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: TorchIO
-summary: TorchIO is a set of tools to efficiently read, preprocess, sample, augment, and write 3D medical images in deep learning applications written in PyTorch.
+summary: TorchIO 是一组工具，用于在 PyTorch 编写的深度学习应用程序中高效读取、预处理、采样、增强和写入 3D 医学图像。
 link: https://github.com/fepegar/torchio
-summary-home: TorchIO is a set of tools to efficiently read, preprocess, sample, augment, and write 3D medical images in deep learning applications written in PyTorch.
+summary-home: TorchIO 是一组工具，用于在 PyTorch 编写的深度学习应用程序中高效读取、预处理、采样、增强和写入 3D 医学图像。
 featured-home: false
 github-id: fepegar/torchio
 date-added: 12/06/20

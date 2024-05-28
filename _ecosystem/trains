@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: Clear ML
-summary: ClearML is a full system ML / DL experiment manager, versioning and ML-Ops solution.
+summary: ClearML 是一个完整的机器学习/深度学习实验管理器、版本控制和 ML-Ops 解决方案。
 link: https://github.com/allegroai/trains/
-summary-home: ClearML is a full system ML / DL experiment manager, versioning and ML-Ops solution.
+summary-home: ClearML 是一个完整的机器学习/深度学习实验管理器、版本控制和 ML-Ops 解决方案。
 featured-home: false
 github-id: allegroai/clearml
 date-added: 6/17/20

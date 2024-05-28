@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: raster-vision
-summary: An open source framework for deep learning on satellite and aerial imagery.
+summary: 一个用于卫星和航空图像深度学习的开源框架
 link: https://docs.rastervision.io
-summary-home: An open source framework for deep learning on satellite and aerial imagery.
+summary-home: 一个用于卫星和航空图像深度学习的开源框架
 featured-home: false
 github-id: azavea/raster-vision
 date-added: 05/07/21

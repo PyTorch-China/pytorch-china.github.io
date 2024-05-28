@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: PyKale
-summary: PyKale is a PyTorch library for multimodal learning and transfer learning with deep learning and dimensionality reduction on graphs, images, texts, and videos.
+summary: PyKale 是一个用于多模态学习和迁移学习的 PyTorch 库，可用于在图形、图像、文本和视频上进行深度学习和降维。
 link: https://github.com/pykale/pykale
-summary-home: PyKale is a PyTorch library for multimodal learning and transfer learning with deep learning and dimensionality reduction on graphs, images, texts, and videos.
+summary-home: PyKale 是一个用于多模态学习和迁移学习的 PyTorch 库，可用于在图形、图像、文本和视频上进行深度学习和降维。
 featured-home: false
 github-id: pykale/pykale
 date-added: 09/09/21

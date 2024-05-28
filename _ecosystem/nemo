@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: NeMo
-summary: "NeMo: a toolkit for conversational AI."
+summary: NeMo：一个用于对话人工智能的工具包。
 link: https://github.com/NVIDIA/NeMo
-summary-home: "NeMo: a toolkit for conversational AI"
+summary-home: NeMo：一个用于对话人工智能的工具包。
 featured-home: false
 github-id: NVIDIA/NeMo
 date-added: 6/16/20

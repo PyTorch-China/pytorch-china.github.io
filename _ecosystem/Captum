@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: Captum
-summary: Captum (“comprehension” in Latin) is an open source, extensible library for model interpretability built on PyTorch.
+summary: Captum（拉丁文中的“理解”）是一个建立在 PyTorch 上的开源、可扩展的模型可解释性库。
 link: https://captum.ai/
 order: 4
-summary-home: Captum (“comprehension” in Latin) is an open source, extensible library for model interpretability built on PyTorch.
+summary-home: Captum（拉丁文中的“理解”）是一个建立在 PyTorch 上的开源、可扩展的模型可解释性库。
 featured-home: true
 redirect_to: https://captum.ai/
 github-id: pytorch/captum

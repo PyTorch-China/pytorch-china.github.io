@@ -1,7 +1,7 @@
 ---
 layout: ecosystem_detail
 title: Pyro
-summary: Pyro is a universal probabilistic programming language (PPL) written in Python and supported by PyTorch on the backend.
+summary: Pyro 是一个通用的概率编程语言（PPL），用 Python 编写，在后端由 PyTorch 支持。
 link: http://pyro.ai/
 order: 13
 redirect_to: http://pyro.ai/

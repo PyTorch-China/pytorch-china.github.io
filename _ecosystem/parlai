@@ -1,10 +1,10 @@
 ---
 layout: ecosystem_detail
 title: ParlAI
-summary: ParlAI is a unified platform for sharing, training, and evaluating dialog models across many tasks.
+summary: ParlAI 是一个统一平台，用于在许多任务中共享、训练和评估对话模型。
 link: http://parl.ai/
 order: 11
-summary-home: ParlAI is a unified platform for sharing, training, and evaluating dialog models across many tasks.
+summary-home: ParlAI 是一个统一平台，用于在许多任务中共享、训练和评估对话模型。
 featured-home: false
 redirect_to: http://parl.ai/
 github-id: facebookresearch/ParlAI

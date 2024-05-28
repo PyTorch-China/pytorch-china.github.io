@@ -1,7 +1,7 @@
 ---
 layout: ecosystem_detail
 title: RoMa
-summary: RoMa is a standalone library to handle rotation representations with PyTorch (rotation matrices, quaternions, rotation vectors, etc). It aims for robustness, ease-of-use, and efficiency.
+summary: RoMa 是一个独立的库，用于处理 PyTorch 中的旋转表示（旋转矩阵、四元数、旋转向量等）。它旨在具有稳健性、易用性和效率。
 link: https://github.com/naver/roma 
 order: 10
 redirect_to: https://github.com/naver/roma 

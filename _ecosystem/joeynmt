@@ -1,9 +1,9 @@
 ---
 layout: ecosystem_detail
 title: joeynmt
-summary: Minimalist Neural Machine Translation toolkit for educational purposes
+summary: 为教育目的而设计的简约神经机器翻译工具包。
 link: https://joeynmt.readthedocs.io/en/latest/
-summary-home: Minimalist Neural Machine Translation toolkit for educational purposes
+summary-home: 为教育目的而设计的简约神经机器翻译工具包。
 featured-home: false
 github-id: joeynmt/joeynmt
 date-added: 05/07/21

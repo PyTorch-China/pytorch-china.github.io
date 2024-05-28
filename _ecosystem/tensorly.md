@@ -1,7 +1,7 @@
 ---
 layout: ecosystem_detail
 title: TensorLy
-summary: TensorLy is a high level API for tensor methods and deep tensorized neural networks in Python that aims to make tensor learning simple.
+summary: TensorLy 是一个面向 Python 的张量方法和深度张量神经网络的高级 API。它旨在简化张量学习。
 link: http://tensorly.org/stable/home.html
 order: 18
 redirect_to: http://tensorly.org/stable/home.html
