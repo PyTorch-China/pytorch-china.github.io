@@ -17,58 +17,62 @@ display-news-banner: true
   </div>
 </div>
 
+
 <div class="main-content-wrapper">
 
   <div class="container homepage-box-module">
     <div class="row">
       <div class="col-md">
-        <h3>2024 PyTorch峰会</h3>
+        <h3>2024 PyTorch Conference</h3>
         <p>
-          PyTorch 2024 峰会的提案征集已启动。提前注册可享受早鸟优惠。
+          Call for proposals for PyTorch Conference 2024 are live. Save on Early Bird Registration.
         </p>
         <p>
-          <a href="https://hubs.la/Q02sr1cw0">详情和指南</a>
+          <a href="https://hubs.la/Q02sr1cw0">Full details + guidelines</a>
         </p>
       </div>
       <div class="col-md">
         <h3>PyTorch 2.3</h3>
         <p>
-          PyTorch 2.3 引入了在 torch.compile 中支持用户定义的 Triton 内核，并改进了使用原生 PyTorch 进行大语言模型(LLMs)训练的功能。
+          PyTorch 2.3 introduces support for user-defined Triton kernels in torch.compile as well as improvements for training Large Language Models (LLMS) using native PyTorch. 
         </p>
         <p>
-          <a href="/blog/pytorch2-3/">了解更多</a>
+          <a href="/blog/pytorch2-3/">Learn More</a>
         </p>
       </div>
       <div class="col-md">
-        <h3>加入会员</h3>
+        <h3>Membership Available</h3>
         <p>
-          成为 PyTorch 基金会的重要一员，共同构建和塑造 AI 的未来。
+          Become an integral part of the PyTorch Foundation, to build and shape the future of AI.
         </p>
         <p>
-          <a href="/join">加入</a>
+          <a href="/join">Join</a>
         </p>
       </div>
     </div>
   </div>
+
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <a href="{{ site.baseurl }}/get-started" class="btn btn-lg with-right-arrow module-button">
-          开始使用
+          Get Started
         </a>
       </div>
     </div>
   </div>
+
+
   <div class="container homepage-feature-module key-features-module">
 
     <div class="row">
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-12">
-            <h2>关键特性 &amp;<br />能力</h2>
+            <h2>Key Features &amp;<br />Capabilities</h2>
 
             <a href="{{ site.baseurl }}/features" class="btn btn-lg with-right-arrow module-button">
-              查看全部特性
+              See all Features
             </a>
           </div>
         </div>
@@ -77,100 +81,132 @@ display-news-banner: true
           {% assign features = site.features | where: "featured-home", true | sort: 'order' %}
 
           {% for feature in features %}
-          <div class="col-md-3 key-feature-box">
-            <h5>{{ feature.title }}</h5>
-            <p>{{ feature.summary-home }}</p>
-          </div>
+            <div class="col-md-3 key-feature-box">
+              <h5>{{ feature.title }}</h5>
+              <p>{{ feature.summary-home }}</p>
+            </div>
           {% endfor %}
         </div>
       </div>
     </div>
   </div>
 
-</div>
-{% include quick_start_module.html %}
+  {% include quick_start_module.html %}
 
-<div class="homepage-feature-module community-module container-fluid">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2>生态系统</h2>
-        <h5>特色项目</h5>
+  <div class="homepage-feature-module community-module container-fluid">
+      <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Ecosystem </h2>
+          <h5>Feature Projects</h5>
 
-        <a href="{{ site.baseurl }}/ecosystem" class="btn btn-lg with-right-arrow module-button">
-          查看全部项目
-        </a>
+          <a href="{{ site.baseurl }}/ecosystem" class="btn btn-lg with-right-arrow module-button">
+            See all Projects
+          </a>
 
+        </div>
+        <div class="col-md-8">
+          <p class="h2-subheadline">Explore a rich ecosystem of libraries, tools, and more to support development.</p>
+        </div>
       </div>
-      <div class="col-md-8">
-        <p class="h2-subheadline">探索丰富的库、工具等生态系统来支持项目开发. </p>
-      </div>
-    </div>
 
-    <div class="row ecosystem-row">
-      {% assign ecosystems = site.ecosystem | where: "featured-home", true | sort: 'order' %}
-      {% for item in ecosystems %}
-      <div class="col-md-4">
-        <div class="card ecosystem-card">
-          {% if item.external %}
-          <a href="{{ item.link }}" target="_blank">
+      <div class="row ecosystem-row">
+        {% assign ecosystems = site.ecosystem | where: "featured-home", true | sort: 'order' %}
+        {% for item in ecosystems %}
+        <div class="col-md-4">
+          <div class="card ecosystem-card">
+            {% if item.external %}
+              <a href="{{ item.link }}" target="_blank">
             {% else %}
-            <a href="{{ site.baseurl }}{{ item.url }}">
-              {% endif %}
+              <a href="{{ site.baseurl }}{{ item.url }}">
+            {% endif %}
               <div class="card-body {{ item.logo-class }} {% if item.external %}external{% endif %}">
                 <h4>{{ item.title }}</h4>
                 <p class="card-summary">{{ item.summary-home }}</p>
               </div>
             </a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-    <div id="community-module" class="row">
-      <div class="col-md-12 community-heading">
-        <h2>社区</h2>
-
-      </div>
-      <div class="col-md-8">
-        <p class="h2-subheadline">加入 PyTorch 开发者社区，进行贡献、学习，并获取问题的解答。</p>
-      </div>
-    </div>
-
-    <div class="row resources">
-      {% assign resources = site.resources | where: "featured-home",true | sort: 'order' %}
-
-      {% for resource in resources %}
-      {% assign card_title = resource.title | split: ' ' %}
-      <div class="col-md-4">
-        <div class="card resource-card {{ resource.class }}">
-          <!-- Cards with the pytorch-resource class also have a pytorch-discuss class.
-              These two classes along with the discuss class allow us to stylize the second word in the card header so that it features orange text.
-             -->
-          {% if resource.class == "pytorch-resource" %}
-          {% if resource.external %}
-          <a href="{{ resource.link }}" class="pytorch-discuss" target="_blank">
-            {% else %}
-            <a href="{{ resource.link }}" class="pytorch-discuss">
-              {% endif %}
-              <div class="card-body">
-                <h4>{{ card_title[0] }}<span class="discuss">{{ card_title[1] }}</span></h4>
-                {% else %}
-                {% if resource.external %}
-                <a href="{{ resource.link }}" target="_blank">
-                  {% else %}
-                  <a href="{{ resource.link }}">
-                    {% endif %}
-                    <div class="card-body">
-                      <h4>{{ card_title }}</h4>
-                      {% endif %}
-                      <p class="card-summary">{{ resource.summary-home }}</p>
-                    </div>
-                  </a>
-              </div>
+          </div>
         </div>
         {% endfor %}
       </div>
+
+      <div id="community-module" class="row">
+        <div class="col-md-12 community-heading">
+          <h2>Community</h2>
+
+        </div>
+        <div class="col-md-8">
+          <p class="h2-subheadline">Join the PyTorch developer community to contribute, learn, and get your questions answered.</p>
+        </div>
+      </div>
+
+      <div class="row resources">
+        {% assign resources = site.resources | where: "featured-home",true | sort: 'order' %}
+
+        {% for resource in resources %}
+          {% assign card_title = resource.title | split: ' ' %}
+          <div class="col-md-4">
+          <div class="card resource-card {{ resource.class }}">
+            <!-- Cards with the pytorch-resource class also have a pytorch-discuss class.
+                These two classes along with the discuss class allow us to stylize the second word in the card header so that it features orange text.
+               -->
+            {% if resource.class == "pytorch-resource" %}
+              {% if resource.external %}
+                <a href="{{ resource.link }}" class="pytorch-discuss" target="_blank">
+              {% else %}
+                <a href="{{ resource.link }}" class="pytorch-discuss">
+              {% endif %}
+              <div class="card-body">
+                <h4>{{ card_title[0] }}<span class="discuss">{{ card_title[1] }}</span></h4>
+            {% else %}
+              {% if resource.external %}
+                <a href="{{ resource.link }}" target="_blank">
+              {% else %}
+                <a href="{{ resource.link }}">
+              {% endif %}
+              <div class="card-body">
+                <h4>{{ card_title }}</h4>
+            {% endif %}
+                <p class="card-summary">{{ resource.summary-home }}</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+  <div class="homepage-bottom-wrapper">
+    <div class="homepage-feature-module pytorch-users-module container">
+    <div class="row">
+      <div class="col-md-12 university-testimonials">
+        <h2>Companies &amp; Universities<br />Using PyTorch</h2>
+
+        <!-- Temporarily hiding button since there isn't a 'Stories' page
+        <a href="{{ site.baseurl }}/features" class="btn btn-lg with-right-arrow module-button">
+          See all Stories
+        </a> -->
+
+        <div class="row university-testimonials-content">
+          {% assign case_studies = site.case_studies | where: "featured-home", true | sort: "order" %}
+
+          {% for case_study in case_studies %}
+            <div class="col-md-4">
+              <img src="{{ site.baseurl }}/{{ case_study.logo }}" class="img-fluid" width="180">
+              <p>{{ case_study.excerpt }}</p>
+              <a href="{{ case_study.link }}" class="btn btn-lg with-right-arrow">
+                Learn More
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -179,9 +215,14 @@ display-news-banner: true
 <!-- Start Load Tweets -->
 
 <div id="twitter-widget">
-  <a class="twitter-timeline" href="https://twitter.com/pytorch" data-height="0"
-    data-chrome="noheader nofooter noborders transparent noscrollbar" data-link-color="#e44c2c" data-tweet-limit="3"
-    data-border-color="#a80000" data-dnt="true">
+  <a class="twitter-timeline"
+    href="https://twitter.com/pytorch"
+    data-height="0"
+    data-chrome="noheader nofooter noborders transparent noscrollbar"
+    data-link-color="#e44c2c"
+    data-tweet-limit="3"
+    data-border-color="#a80000"
+    data-dnt="true">
   </a>
 </div>
 
@@ -194,5 +235,4 @@ display-news-banner: true
 <!-- Load JS for pagination -->
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-<script list-id="news-items" display-count="1" pagination="true"
-  src="{{ site.baseurl }}/assets/filter-hub-tags.js"></script>
+<script list-id="news-items" display-count="1" pagination="true" src="{{ site.baseurl }}/assets/filter-hub-tags.js"></script>
