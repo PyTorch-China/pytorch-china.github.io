@@ -1,7 +1,7 @@
 ---
 title: Dive into Deep Learning
-summary-home: An interactive deep learning book.
-summary: An interactive deep learning book.
+summary-home: 一本互动式深度学习书籍
+summary: 一本互动式深度学习书籍
 link: https://d2l.ai/
 order: 11
 featured-home: false

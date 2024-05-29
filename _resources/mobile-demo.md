@@ -1,7 +1,7 @@
 ---
-title: Mobile Demo
-summary-home: Check out the PyTorch Mobile demo app for iOS and Android.
-summary: Check out the PyTorch Mobile demo app for iOS and Android.
+title: 移动端示例
+summary-home: PyTorch 在 iOS and Android 上的示例
+summary: PyTorch 在 iOS and Android 上的示例
 class: pytorch-resource
 link: https://github.com/pytorch/android-demo-app
 order: 10

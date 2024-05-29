@@ -1,7 +1,7 @@
 ---
-title: Contributors
-summary-home: 'Stay up to date with the codebase and discover RFCs, PRs and more.'
-summary: 'Stay up to date with the codebase and discover RFCs, PRs and more.'
+title: 贡献者
+summary-home: 获取最新状态，发现 RFC、PR 等更多内容
+summary: 获取最新状态，发现 RFC、PR 等更多内容
 link: https://pytorch.org/resources/contributors
 class: pytorch-resource
 order: 13

@@ -15,7 +15,7 @@ snippet: >
   ```
 
 # summary-home: PyTorch is well supported on major cloud platforms, providing frictionless development and easy scaling.
-summary-home: PyTorch 在主要的云平台上得到了良好的支持，提供了无摩擦的开发和简便的扩展。
+summary-home: PyTorch 在主要的云平台上得到了良好的支持，提供了高效的开发和简便的扩展。
 featured-home: true
 
 ---

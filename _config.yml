@@ -5,8 +5,8 @@ default_author: Team PyTorch
 description: "Scientific Computing..."
 latest_version: 1.0
 timezone: America/Los_Angeles
-url: "https://pytorch.org"
-baseurl: ""
+url: "http://hippocookie.github.io"
+baseurl: "/pytorch-cn"
 plugins:
   - jekyll-paginate-v2
   - jekyll-redirect-from
