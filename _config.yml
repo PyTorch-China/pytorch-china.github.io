@@ -1,12 +1,10 @@
 # Site settings
 title: "PyTorch Website"
-author: "Facebook"
-default_author: Team PyTorch
-description: "Scientific Computing..."
+default_author: PyTorch China
 latest_version: 1.0
-timezone: America/Los_Angeles
-url: "http://hippocookie.github.io"
-baseurl: "/pytorch-cn"
+timezone: China/Shanghai
+url: "http://pytorch-china.github.io"
+baseurl: ""
 tutorialurl: "/tutorials"
 plugins:
   - jekyll-paginate-v2
