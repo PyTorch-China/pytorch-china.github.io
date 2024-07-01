@@ -1,4 +1,4 @@
-name: pytorch-cn deploy
+name: PyTorch-China deploy
 on:
   push:
     branches: ["master"]
