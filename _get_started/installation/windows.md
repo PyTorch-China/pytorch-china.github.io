@@ -1,99 +1,97 @@
-# Installing on Windows
+# 在 Windows 上安装
 {:.no_toc}
 
-PyTorch can be installed and used on various Windows distributions. Depending on your system and compute requirements, your experience with PyTorch on Windows may vary in terms of processing time. It is recommended, but not required, that your Windows system has an NVIDIA GPU in order to harness the full power of PyTorch's [CUDA](https://developer.nvidia.com/cuda-zone) [support](https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html?highlight=cuda#cuda-tensors).
+PyTorch 可以在各种 Windows 发行版上安装和使用。根据您的系统和计算需求，您在 Windows 上使用 PyTorch 的体验可能在处理时间方面有所不同。建议（但不是必需）您的 Windows 系统有一个 NVIDIA GPU，以便充分利用 PyTorch 的 [CUDA](https://developer.nvidia.com/cuda-zone) [支持](https://pytorch.org/tutorials/beginner/blitz/tensor_tutorial.html?highlight=cuda#cuda-tensors)。
 
-## Prerequisites
+## 先决条件
 {: #windows-prerequisites}
 
-### Supported Windows Distributions
+### 支持的 Windows 发行版
 
-PyTorch is supported on the following Windows distributions:
+PyTorch 支持以下 Windows 发行版：
 
-* [Windows](https://www.microsoft.com/en-us/windows) 7 and greater; [Windows 10](https://www.microsoft.com/en-us/software-download/windows10ISO) or greater recommended.
-* [Windows Server 2008](https://docs.microsoft.com/en-us/windows-server/windows-server) r2 and greater
+* [Windows](https://www.microsoft.com/en-us/windows) 7 及更高版本；推荐 [Windows 10](https://www.microsoft.com/en-us/software-download/windows10ISO) 或更高版本。
+* [Windows Server 2008](https://docs.microsoft.com/en-us/windows-server/windows-server) r2 及更高版本
 
-> The install instructions here will generally apply to all supported Windows distributions. The specific examples shown will be run on a Windows 10 Enterprise machine
+> 这里的安装说明通常适用于所有支持的 Windows 发行版。具体示例将在 Windows 10 企业版机器上运行。
 
 ### Python
 {: #windows-python}
 
-Currently, PyTorch on Windows only supports Python 3.8-3.11; Python 2.x is not supported.
+目前，Windows 上的 PyTorch 仅支持 Python 3.8-3.11；不支持 Python 2.x。
 
-As it is not installed by default on Windows, there are multiple ways to install Python:
+由于 Windows 默认不安装 Python，有多种方法可以安装 Python：
 
 * [Chocolatey](https://chocolatey.org/)
-* [Python website](https://www.python.org/downloads/windows/)
+* [Python 官网](https://www.python.org/downloads/windows/)
 * [Anaconda](#anaconda)
 
-> If you use Anaconda to install PyTorch, it will install a sandboxed version of Python that will be used for running PyTorch applications.
+> 如果您使用 Anaconda 安装 PyTorch，它将安装一个沙盒版本的 Python，用于运行 PyTorch 应用程序。
 
-> If you decide to use Chocolatey, and haven't installed Chocolatey yet, ensure that you are running your command prompt as an administrator.
+> 如果您决定使用 Chocolatey，并且尚未安装 Chocolatey，请确保以管理员身份运行命令提示符。
 
-For a Chocolatey-based install, run the following command in an administrative command prompt:
+对于基于 Chocolatey 的安装，在管理员命令提示符中运行以下命令：
 
 ```bash
 choco install python
 ```
 
-### Package Manager
+### 包管理器
 {: #windows-package-manager}
 
-To install the PyTorch binaries, you will need to use at least one of two supported package managers: [Anaconda](https://www.anaconda.com/download/#windows) and [pip](https://pypi.org/project/pip/). Anaconda is the recommended package manager as it will provide you all of the PyTorch dependencies in one, sandboxed install, including Python and `pip.`
+要安装 PyTorch 二进制文件，您需要使用至少两个支持的包管理器中的一个：[Anaconda](https://www.anaconda.com/download/#windows) 或 [pip](https://pypi.org/project/pip/) 。推荐使用 Anaconda 作为包管理器，因为它将在一个沙盒安装中提供所有 PyTorch 依赖项，包括 Python 和 pip。
 
 #### Anaconda
 
-To install Anaconda, you will use the [64-bit graphical installer](https://www.anaconda.com/download/#windows) for PyTorch 3.x. Click on the installer link and select `Run`. Anaconda will download and the installer prompt will be presented to you. The default options are generally sane.
+要安装 Anaconda，您将使用 [安装程序](https://www.anaconda.com/download/#windows) 安装 PyTorch 3.x。点击安装程序链接并选择 `运行` 。Anaconda 将下载，并向您显示安装程序提示。默认选项通常是合理的。
 
 #### pip
 
 If you installed Python by any of the recommended ways [above](#windows-python), [pip](https://pypi.org/project/pip/) will have already been installed for you.
 
-## Installation
+如果您通过 [上面](#windows-python) 推荐的任何方式安装了 Python，[pip](https://pypi.org/project/pip/) 已经为您安装好了。
+
+## 安装
 {: #windows-installation}
 
 ### Anaconda
 {: #windows-anaconda}
 
-To install PyTorch with Anaconda, you will need to open an Anaconda prompt via `Start | Anaconda3 | Anaconda Prompt`.
+要使用 Anaconda 安装 PyTorch，您需要通过 `Start | Anaconda3 | Anaconda Prompt` 打开 Anaconda。
 
-#### No CUDA
+#### 无 CUDA
 
-To install PyTorch via Anaconda, and do not have a [CUDA-capable](https://developer.nvidia.com/cuda-zone) system or do not require CUDA, in the above selector, choose OS: Windows, Package: Conda and CUDA: None.
-Then, run the command that is presented to you.
+如果要通过 Anaconda 安装 PyTorch，并且没有 [CUDA-capable](https://developer.nvidia.com/cuda-zone) 系统或不需要 CUDA，在上面的选择器中，选择 OS: Windows，Package: Conda 和 CUDA: None。 然后，运行向您显示的命令。
 
-#### With CUDA
+#### 有 CUDA
 
-To install PyTorch via Anaconda, and you do have a [CUDA-capable](https://developer.nvidia.com/cuda-zone) system, in the above selector, choose OS: Windows, Package: Conda and the CUDA version suited to your machine. Often, the latest CUDA version is better.
-Then, run the command that is presented to you.
+如果要通过 Anaconda 安装 PyTorch，并且您确实有 [CUDA-capable](https://developer.nvidia.com/cuda-zone) 系统，在上面的选择器中，选择 OS: Windows，Package: Conda 和适合您机器的 CUDA 版本。通常，最新的 CUDA 版本更好。 然后，运行向您显示的命令。
 
 
 ### pip
 {: #windows-pip}
 
-#### No CUDA
+#### 无 CUDA
 
-To install PyTorch via pip, and do not have a [CUDA-capable](https://developer.nvidia.com/cuda-zone) system or do not require CUDA, in the above selector, choose OS: Windows, Package: Pip and CUDA: None.
-Then, run the command that is presented to you.
+如果要通过 pip 安装 PyTorch，并且没有 [CUDA-capable](https://developer.nvidia.com/cuda-zone) 系统或不需要 CUDA，在上面的选择器中，选择 OS: Windows，Package: Pip 和 CUDA: None。 然后，运行向您显示的命令。
 
-#### With CUDA
+#### 有 CUDA
 
-To install PyTorch via pip, and do have a [CUDA-capable](https://developer.nvidia.com/cuda-zone) system, in the above selector, choose OS: Windows, Package: Pip and the CUDA version suited to your machine. Often, the latest CUDA version is better.
-Then, run the command that is presented to you.
+如果要通过 pip 安装 PyTorch，并且您确实有 [CUDA-capable](https://developer.nvidia.com/cuda-zone)  系统，在上面的选择器中，选择 OS: Windows，Package: Pip 和适合您机器的 CUDA 版本。通常，最新的 CUDA 版本更好。 然后，运行向您显示的命令。
 
 
-## Verification
+## 验证
 {: #windows-verification}
 
-To ensure that PyTorch was installed correctly, we can verify the installation by running sample PyTorch code. Here we will construct a randomly initialized tensor.
+为了确保 PyTorch 安装正确，我们可以通过运行示例 PyTorch 代码来验证安装。这里我们将构造一个随机初始化的张量。
 
-From the command line, type:
+在命令行中，输入：
 
 ```bash
 python
 ```
 
-then enter the following code:
+然后输入以下代码：
 
 ```python
 import torch
@@ -101,7 +99,7 @@ x = torch.rand(5, 3)
 print(x)
 ```
 
-The output should be something similar to:
+输出应该类似于：
 
 ```
 tensor([[0.3380, 0.3845, 0.3217],
@@ -111,7 +109,7 @@ tensor([[0.3380, 0.3845, 0.3217],
         [0.4675, 0.3947, 0.1426]])
 ```
 
-Additionally, to check if your GPU driver and CUDA is enabled and accessible by PyTorch, run the following commands to return whether or not the CUDA driver is enabled:
+此外，要检查您的 GPU 驱动程序和 CUDA 是否已启用并可被 PyTorch 访问，运行以下命令以返回 CUDA 驱动程序是否已启用：
 
 ```python
 import torch
@@ -121,14 +119,17 @@ torch.cuda.is_available()
 ## Building from source
 {: #windows-from-source}
 
-For the majority of PyTorch users, installing from a pre-built binary via a package manager will provide the best experience. However, there are times when you may want to install the bleeding edge PyTorch code, whether for testing or actual development on the PyTorch core. To install the latest PyTorch code, you will need to [build PyTorch from source](https://github.com/pytorch/pytorch#from-source).
+对于大多数 PyTorch 用户来说，通过包管理器从预构建的二进制文件安装将提供最佳体验。但是，有时您可能想安装最新的 PyTorch 代码，无论是为了测试还是实际开发 PyTorch 核心。要安装最新的 PyTorch 代码，您需要从 [源代码构建 PyTorch](https://github.com/pytorch/pytorch#from-source) 。
 
 ### Prerequisites
 {: #windows-prerequisites-2}
 
-1. Install [Anaconda](#anaconda)
-2. Install [CUDA](https://developer.nvidia.com/cuda-downloads), if your machine has a [CUDA-enabled GPU](https://developer.nvidia.com/cuda-gpus).
-3. If you want to build on Windows, Visual Studio with MSVC toolset, and NVTX are also needed. The exact requirements of those dependencies could be found out [here](https://github.com/pytorch/pytorch#from-source).
-4. Follow the steps described here: [https://github.com/pytorch/pytorch#from-source](https://github.com/pytorch/pytorch#from-source)
+1. 安装 [Anaconda](#anaconda)
+2. 安装 [CUDA](https://developer.nvidia.com/cuda-downloads), 如果机器有 [CUDA-enabled GPU](https://developer.nvidia.com/cuda-gpus).
+3. 如果您想在 Windows 上构建，还需要带有 MSVC 工具集的 Visual Studio 和 NVTX。这些依赖项的确切要求可以在查看 [这里](https://github.com/pytorch/pytorch#from-source) 。
+4. 按照这里描述的步骤操作：[https://github.com/pytorch/pytorch#from-source](https://github.com/pytorch/pytorch#from-source)
+
 
 You can verify the installation as described [above](#windows-verification).
+您可以按照 [上面](#windows-verification) 描述的方法验证安装。
+
