@@ -1,6 +1,6 @@
 ---
 layout: get_started
-title: Start Locally
+title: 本地启动
 permalink: /get-started/locally/
 background-class: get-started-background
 body-class: get-started
