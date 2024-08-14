@@ -94,7 +94,7 @@ tensor([[0.3380, 0.3845, 0.3217],
         [0.4675, 0.3947, 0.1426]])
 ```
 
-## Building from source
+## 源代码构建
 {: #mac-from-source}
 
 对于大多数 PyTorch 用户来说，通过包管理器安装预构建的二进制文件将提供最佳体验。但是，有时您可能想安装最新的 PyTorch 代码，无论是为了测试还是实际开发 PyTorch 核心。要安装最新的 PyTorch 代码，您需要从[源代码构建PyTorch](https://github.com/pytorch/pytorch#from-source)。
@@ -102,7 +102,7 @@ tensor([[0.3380, 0.3845, 0.3217],
 
 
 
-### Prerequisites
+### 先决条件
 {: #mac-prerequisites-2}
 
 1. [可选] 安装 [Anaconda](#anaconda)
