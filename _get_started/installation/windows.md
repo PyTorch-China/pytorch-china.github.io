@@ -116,12 +116,12 @@ import torch
 torch.cuda.is_available()
 ```
 
-## Building from source
+## 源代码构建
 {: #windows-from-source}
 
 对于大多数 PyTorch 用户来说，通过包管理器从预构建的二进制文件安装将提供最佳体验。但是，有时您可能想安装最新的 PyTorch 代码，无论是为了测试还是实际开发 PyTorch 核心。要安装最新的 PyTorch 代码，您需要从 [源代码构建 PyTorch](https://github.com/pytorch/pytorch#from-source) 。
 
-### Prerequisites
+### 先决条件
 {: #windows-prerequisites-2}
 
 1. 安装 [Anaconda](#anaconda)
