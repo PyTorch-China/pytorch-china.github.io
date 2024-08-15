@@ -1,6 +1,6 @@
 # Site settings
 title: "PyTorch China Website"
-default_author: "PyTorch China"
+default_author: "PyTorch"
 description: "Scientific Computing..."
 latest_version: 1.0
 timezone: China/Shanghai
@@ -47,7 +47,7 @@ include:
     _symbolic_trace.html,
     _tensor_str.html,
     _trace.html,
-    _utils.html,    
+    _utils.html,
   ]
 keep_files: [vendor/assets, docs/master/_static/js/vendor/]
 github: [metadata]
