@@ -1,6 +1,6 @@
 # Site settings
 title: "PyTorch China Website"
-default_author: "PyTorch"
+default_author: "Team PyTorch"
 description: "Scientific Computing..."
 latest_version: 1.0
 timezone: China/Shanghai
