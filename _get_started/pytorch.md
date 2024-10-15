@@ -47,7 +47,7 @@ TorchDynamo、AOTAutograd、PrimTorch 和 TorchInductor 是用 Python 编写的�
 <img src="/assets/images/pytorch-2.0-img2.png" width="90%">
 </p>
 
-### 用户评价
+## 用户评价
 
 以下是一些 PyTorch 用户对我们新方向的评价：
 
@@ -215,7 +215,6 @@ optimized_model.conv1.weight.fill_(0.01)
 
 ### Hooks
 
-Module and Tensor [hooks](https://pytorch.org/docs/stable/notes/modules.html#module-hooks) don’t fully work at the moment, but they will eventually work as we finish development.
 Module 和 Tensor [hooks](https://pytorch.org/docs/stable/notes/modules.html#module-hooks)  目前还为完全支持。
 
 ### 序列化
@@ -251,7 +250,6 @@ torch.save(exported_model, "foo.pt")
 
 ### Debugging Issues
 
-A compiled mode is opaque and hard to debug. You will have questions such as:
 编译模式隐晦且难以调试。你可能会有以下问题：
 
 - 为什么我的程序在编译模式下崩溃?
@@ -286,17 +284,18 @@ By supporting dynamic shapes in PyTorch 2.0’s Compiled mode, we can get the be
 
 当前的工作进展非常迅速，我们可能会暂时让一些模型回归，因为我们正在进行基础设施的重大改进。关于动态形状的最新进展可以在 [这里](https://dev-discuss.pytorch.org/t/state-of-symbolic-shapes-branch/777/19)找到。
 
-## Distributed
+## 分布式
 
-In summary, torch.distributed’s two main distributed wrappers work well in compiled mode.
+torch.distributed 的两个主要分布式包装器在编译模式下工作良好。
 
-Both `DistributedDataParallel` (DDP) and `FullyShardedDataParallel` (FSDP) work in compiled mode and provide improved performance and memory utilization relative to eager mode, with some caveats and limitations.
+`DistributedDataParallel` (DDP) 和 `FullyShardedDataParallel` (FSDP) 都能在编译模式下工作，并且相对于 eager 模式提供了更好的性能和内存利用率，但也有一些注意事项和限制。
+
 
 <p>
-<center> <u>Speedups in AMP Precision</u></center>
+<center> <u>AMP 精度下的加速</u></center>
 <img src="/assets/images/pytorch-2.0-img9.png" width="90%">
-<center><u>Left: speedups for FSDP in Compiled mode over eager mode (AMP precision).<br>
-Right: FSDP in Compiled mode takes substantially lesser memory than in eager mode</u></center>
+<center><u>左图：编译模式下 FSDP 相对于 eager 模式的加速（AMP 精度）。<br>
+右图：编译模式下 FSDP 占用的内存明显少于 eager 模式</u></center>
 </p>
 
 <div style="display:flex; flex-direction: row; padding:10px;">
@@ -306,89 +305,94 @@ Right: FSDP in Compiled mode takes substantially lesser memory than in eager mod
 
 ### DistributedDataParallel (DDP)
 
-DDP relies on overlapping AllReduce communications with backwards computation, and grouping smaller per-layer AllReduce operations into ‘buckets’ for greater efficiency. AOTAutograd functions compiled by TorchDynamo prevent communication overlap, when combined naively with DDP, but performance is recovered by compiling separate subgraphs for each ‘bucket’ and allowing communication ops to happen outside and in-between the subgraphs. DDP support in compiled mode also currently requires `static_graph=False`. See [this post](https://dev-discuss.pytorch.org/t/torchdynamo-update-9-making-ddp-work-with-torchdynamo/860) for more details on the approach and results for DDP + TorchDynamo.
+DDP 依赖于与反向计算重叠的 AllReduce 通信，并将较小的每层 AllReduce 操作分组到 'buckets' 中以提高效率。由 TorchDynamo 编译的 AOTAutograd 函数在与 DDP 组合时会阻止通信重叠，但通过为每个 ‘buckets’ 编译单独的子图并允许通信操作在子图外部和子图之间发生，可以恢复性能。编译模式下的 DDP 支持目前还需要 `static_graph=False`。有关 DDP + TorchDynamo 方法和结果的更多详细信息，请参见 [这篇文章](https://dev-discuss.pytorch.org/t/torchdynamo-update-9-making-ddp-work-with-torchdynamo/860)。
+
 
 ### FullyShardedDataParallel (FSDP)
 
-FSDP itself is a “beta” PyTorch feature and has a higher level of system complexity than DDP due to the ability to tune which submodules are wrapped and because there are generally more configuration options. FSDP works with TorchDynamo and TorchInductor for a variety of popular models, if configured with the `use_original_params=True` flag. Some compatibility issues with particular models or configurations are expected at this time, but will be actively improved, and particular models can be prioritized if github issues are filed.
+FSDP 本身是一个 “beta” PyTorch 功能，由于能够调整包装的子模块以及通常有更多的配置选项，因此其系统复杂性高于 DDP。如果配置了 `use_original_params=True` 标志，FSDP 可以与 TorchDynamo 和 TorchInductor 一起用于各种主流模型。目前预期会有一些与特定模型或配置的兼容性问题，但这些问题将会得到积极改进，如果在 GitHub 上提交问题，特定模型可以优先处理。
 
-Users specify an `auto_wrap_policy` argument to indicate which submodules of their model to wrap together in an FSDP instance used for state sharding, or manually wrap submodules in FSDP instances. For example, many transformer models work well when each ‘transformer block’ is wrapped in a separate FSDP instance and thus only the full state of one transformer block needs to be materialized at one time. Dynamo will insert graph breaks at the boundary of each FSDP instance, to allow communication ops in forward (and backward) to happen outside the graphs and in parallel to computation.
+用户指定一个 `auto_wrap_policy` 参数，以指示其模型的哪些子模块一起包装在一个用于状态分片的 FSDP 实例中，或者手动将子模块包装在 FSDP 实例中。例如，许多 transformer 模型在每个 “transformer block” 包装在一个单独的 FSDP 实例中时效果很好，因此一次只需要实现一个 transformer 块的完整状态。Dynamo 将在每个 FSDP 实例的边界插入图中断，以允许前向（和后向）中的通信操作在图外部并行于计算发生。
 
-If FSDP is used without wrapping submodules in separate instances, it falls back to operating similarly to DDP, but without bucketing. Hence all gradients are reduced in one operation, and there can be no compute/communication overlap even in Eager. This configuration has only been tested with TorchDynamo for functionality but not for performance.
+如果 FSDP 在不将子模块包装在单独实例中的情况下使用，它将回退到类似于 DDP 的操作，但没有分桶。因此，所有梯度在一个操作中减少，并且即使在 eager 模式下也无法进行计算/通信重叠。此配置仅在功能上与 TorchDynamo 进行了测试，但未进行性能测试。
 
-## Developer/Vendor Experience
+## 开发者体验
 
-With PyTorch 2.0, we want to simplify the backend (compiler) integration experience. To do this, we have focused on **reducing the number of operators** and **simplifying the semantics** of the operator set necessary to bring up a PyTorch backend.
+在 PyTorch 2.0 中，我们希望简化后端（编译器）集成体验。为此，我们专注于 **减少操作符的数量** 和 **简化操作符集的语义**，以便于开发接入 PyTorch 后端。
 
-In graphical form, the PT2 stack looks like:
+在图形形式中，PT2 堆栈如下所示：
 
 <p>
 <img src="/assets/images/pytorch-2.0-img12.png" width="90%">
 </p>
 
-Starting in the middle of the diagram, AOTAutograd dynamically captures autograd logic in an ahead-of-time fashion, producing a graph of forward and backwards operators in FX graph format.
+从图的中间开始，AOTAutograd 以提前捕获的方式动态捕获自动微分逻辑，生成前向和后向操作符的 FX 图。
 
-We provide a set of hardened decompositions (i.e. operator implementations written in terms of other operators) that can be leveraged to **reduce** the number of operators a backend is required to implement. We also **simplify** the semantics of PyTorch operators by selectively rewriting complicated PyTorch logic including mutations and views via a process called _functionalization_, as well as guaranteeing operator metadata information such as shape propagation formulas. This work is actively in progress; our goal is to provide a _primitive_ and _stable_ set of ~250 operators with simplified semantics, called _PrimTorch,_ that vendors can leverage (i.e. opt-in to) in order to simplify their integrations.  
-After reducing and simplifying the operator set, backends may choose to integrate at the Dynamo (i.e. the middle layer, immediately after AOTAutograd) or Inductor (the lower layer).  We describe some considerations in making this choice below, as well as future work around mixtures of backends.
+我们提供了一组强化的分解（即用其他操作符实现的操作符实现），可以用来减少后端需要实现的操作符数量。我们还通过一个称为 _functionalization_ 的过程选择性地重写复杂的 PyTorch 逻辑，包括变换和视图，以简化 PyTorch 操作符的语义，并保证操作符元数据信息，如形状传播公式。这项工作正在积极进行中；我们的目标是提供一组 _原始_ 且 _稳定_ 的约 250 个操作符，称为 _PrimTorch_，供应商可以利用（即选择加入）以简化其集成。
 
-**Dynamo Backend**
+在减少和简化操作符集之后，后端可以选择在 Dynamo（即中间层，紧接在 AOTAutograd 之后）或 Inductor（较低层）进行集成。我们在下面描述了一些做出此选择时的考虑因素，以及围绕混合后端的未来工作。
 
-Vendors with existing compiler stacks may find it easiest to integrate as a TorchDynamo backend, receiving an FX Graph in terms of ATen/Prims IR. Note that for both training and inference, the integration point would be immediately after AOTAutograd, since we currently apply decompositions as part of AOTAutograd, and merely skip the backward-specific steps if targeting inference.
+**Dynamo 后端**
 
-**Inductor backend**
+拥有现有编译器栈的供应商可能会发现，将其集成为 TorchDynamo 后端最为容易，接收 ATen/Prims IR 形式的 FX 图。请注意，对于训练和推理，集成点将紧接在 AOTAutograd 之后，因为我们目前将分解作为 AOTAutograd 的一部分，并且如果目标是推理，则仅跳过特定于反向传播的步骤。
 
-Vendors can also integrate their backend directly into Inductor. Inductor takes in a graph produced by AOTAutograd that consists of ATen/Prim operations, and further lowers them down to a loop level IR. Today, Inductor provides lowerings to its loop-level IR for pointwise, reduction, scatter/gather and window operations. In addition, Inductor creates fusion groups, does indexing simplification, dimension collapsing, and tunes loop iteration order in order to support efficient code generation. Vendors can then integrate by providing the mapping from the loop level IR to hardware-specific code. Currently, Inductor has two backends: (1) C++ that generates multithreaded CPU code, (2) Triton that generates performant GPU code. These Inductor backends can be used as an inspiration for the alternate backends.
 
-**Mixture of Backends Interface (coming soon)**
+**Inductor 后端**
 
-We have built utilities for partitioning an FX graph into subgraphs that contain operators supported by a backend and executing the remainder eagerly. These utilities can be extended to support a “mixture of backends,” configuring which portions of the graphs to run for which backend. However, there is not yet a stable interface or contract for backends to expose their operator support, preferences for patterns of operators, etc. This remains as ongoing work, and we welcome feedback from early adopters.
+供应商也可以将其后端直接集成到 Inductor 中。Inductor 接收由 AOTAutograd 生成的包含 ATen/Prim 操作的图，并进一步将其降低到循环级别的 IR。如今，Inductor 为点操作、归约、散射/聚集和窗口操作提供了循环级别 IR 的降低。此外，Inductor 创建融合组，进行索引简化，维度折叠，并调整循环迭代顺序以支持高效的代码生成。供应商可以通过提供从循环级别 IR 到硬件特定代码的映射来进行集成。目前，Inductor 有两个后端：(1) 生成多线程 CPU 代码的 C++，(2) 生成高性能 GPU 代码的 Triton。这些 Inductor 后端可以作为替代后端的灵感来源。
 
-## Final Thoughts
+**混合后端接口（即将推出）**
 
-We are super excited about the direction that we’ve taken for PyTorch 2.0 and beyond. The road to the final 2.0 release is going to be rough, but come join us on this journey early-on. If you are interested in deep-diving further or contributing to the compiler, please continue reading below which includes more information on how to get started (e.g., tutorials, benchmarks, models, FAQs) and **Ask the Engineers: 2.0 Live Q&A Series** starting this month. Additional resources include:
+我们已经构建了用于将 FX 图划分为包含后端支持的操作符的子图并 eager 执行其余部分的实用程序。这些实用程序可以扩展以支持 “混合后端”，配置图的哪些部分运行于哪个后端。然而，目前还没有稳定的接口或合同供后端公开其操作符支持、操作符模式偏好等。这仍然是正在进行的工作，我们欢迎早期试用者的反馈。
 
-- [Getting Started](https://pytorch.org/docs/stable/torch.compiler_get_started.html)
-- [Tutorials](https://pytorch.org/tutorials/)
-- [Documentation](https://pytorch.org/docs/stable)
-- [Developer Discussions](https://dev-discuss.pytorch.org)
+## 最终想法
+
+我们对PyTorch 2.0及其未来的发展方向感到非常兴奋。通往2.0最终版本的道路将会很艰难，请早日加入我们的旅程。如果您有兴趣深入研究或为编译器做贡献，请继续阅读下面的内容，其中包括如何入门的更多信息（例如，教程、基准测试、模型、常见问题解答）以及本月开始的工程师问答：2.0直播问答系列。其他资源包括：
+
+- [入门指南](https://pytorch.org/docs/stable/torch.compiler_get_started.html)
+- [教材](https://pytorch.org/tutorials/)
+- [文档](https://pytorch.org/docs/stable)
+- [开发者论坛](https://dev-discuss.pytorch.org)
 
 <script page-id="pytorch" src="{{ site.baseurl }}/assets/menu-tab-selection.js"></script>
 <script src="{{ site.baseurl }}/assets/quick-start-module.js"></script>
 <script src="{{ site.baseurl }}/assets/show-screencast.js"></script>
 
-## Accelerating Hugging Face and TIMM models with PyTorch 2.0
+## 使用PyTorch 2.0加速Hugging Face和TIMM模型
 
-Author: Mark Saroufim
+作者: Mark Saroufim
 
-`torch.compile()` makes it easy to experiment with different compiler backends to make PyTorch code faster with a single line decorator `torch.compile()`. It works either directly over an nn.Module as a drop-in replacement for torch.jit.script() but without requiring you to make any source code changes. We expect this one line code change to provide you with between 30%-2x training time speedups on the vast majority of models that you’re already running.
+通过使用单行装饰器 `torch.compile()` 实验不同的编译器后端以加速PyTorch代码变得非常容易。它可以直接用于 nn.Module，作为 torch.jit.script() 的替代品，但不需要进行任何源代码更改。我们预计这一行代码的更改将为您已经运行的大多数模型提供 30%-2 倍的训练时间加速。
 
 ```python
 opt_module = torch.compile(module)
 ```
 
-torch.compile supports arbitrary PyTorch code, control flow, mutation and comes with experimental support for dynamic shapes. We’re so excited about this development that we call it PyTorch 2.0.
+torch.compile 支持任意的 PyTorch 代码、控制流、变换，并且还支持动态形状。我们对这一发展感到非常兴奋，因此称其为PyTorch 2.0。
 
-What makes this announcement different for us is we’ve already benchmarked some of the most popular open source PyTorch models and gotten substantial speedups ranging from 30% to 2x [https://github.com/pytorch/torchdynamo/issues/681](https://github.com/pytorch/torchdynamo/issues/681).
 
-There are no tricks here, we’ve pip installed popular libraries like [https://github.com/huggingface/transformers](https://github.com/huggingface/transformers), [https://github.com/huggingface/accelerate](https://github.com/huggingface/accelerate) and [https://github.com/rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models) and then ran torch.compile() on them and that’s it.
 
-It’s rare to get both performance and convenience, but this is why the core team finds PyTorch 2.0 so exciting.
+这次公告的不同之处在于，我们已经对一些最受欢迎的开源PyTorch模型进行了基准测试，并获得了从30%到2倍的显著加速 [https://github.com/pytorch/torchdynamo/issues/681](https://github.com/pytorch/torchdynamo/issues/681).
 
-## Requirements
+这里没有任何技巧，我们已经pip安装了流行的库，如 [https://github.com/huggingface/transformers](https://github.com/huggingface/transformers), [https://github.com/huggingface/accelerate](https://github.com/huggingface/accelerate) and [https://github.com/rwightman/pytorch-image-models](https://github.com/rwightman/pytorch-image-models)，然后运行torch.compile()，就是这样简单。
 
-For GPU (newer generation GPUs will see drastically better performance)
+同时获得性能和便利性是很罕见的，这也是核心团队对 PyTorch 2.0 感到如此兴奋的原因。
+
+## 要求
+
+对于GPU（新一代GPU将看到显著更好的性能）
 
 ```
 pip3 install numpy --pre torch --force-reinstall --index-url https://download.pytorch.org/whl/nightly/cu117
 ```
 
-For CPU
+对于CPU
 
 ```
 pip3 install --pre torch --index-url https://download.pytorch.org/whl/nightly/cpu
 ```
 
-Optional: Verify Installation
+可选：验证安装
 
 ```
 git clone https://github.com/pytorch/pytorch
@@ -396,42 +400,42 @@ cd tools/dynamo
 python verify_dynamo.py
 ```
 
-Optional: Docker installation
+可选：Docker安装
 
-We also provide all the required dependencies in the PyTorch nightly
-binaries which you can download with
+我们还提供了所有所需依赖项的PyTorch夜间版本二进制文件，您可以通过以下方式下载
+
 
 ```
 docker pull ghcr.io/pytorch/pytorch-nightly
 ```
 
-And for ad hoc experiments just make sure that your container has access to all your GPUs
+对于临时实验，只需确保您的容器可以访问所有GPU
 
 ```
 docker run --gpus all -it ghcr.io/pytorch/pytorch-nightly:latest /bin/bash
 ```
 
-## Getting Started
+## 入门指南
 
-Please read Mark Saroufim’s [full blog post](/blog/Accelerating-Hugging-Face-and-TIMM-models/) where he walks you through a tutorial and real models for you to try PyTorch 2.0 today.
+请阅读Mark Saroufim的 [完整博客](/blog/Accelerating-Hugging-Face-and-TIMM-models/)，他会引导您完成教程和使用真实模型来尝试 PyTorch 2.0。
 
-Our goal with PyTorch was to build a breadth-first compiler that would speed up the vast majority of actual models people run in open source. The Hugging Face Hub ended up being an extremely valuable benchmarking tool for us, ensuring that any optimization we work on actually helps accelerate models people want to run.
+我们开发PyTorch的目标是构建一个广度优先的编译器，以加速开源中人们实际运行的大多数模型。Hugging Face Hub 最终成为了一个非常有价值的基准测试工具，确保我们进行的任何优化实际上都有助于加速人们想要运行的模型。
 
-The blog tutorial will show you exactly how to replicate those speedups so you can be as excited as to PyTorch 2.0 as we are. So please try out PyTorch 2.0, enjoy the free perf and if you’re not seeing it then please open an issue and we will make sure your model is supported [https://github.com/pytorch/torchdynamo/issues](https://github.com/pytorch/torchdynamo/issues)
+博客教程将准确展示如何复制这些加速效果，以便您能像我们一样对 PyTorch 2.0 感到兴奋。所以请尝试 PyTorch 2.0，享受免费的性能提升，如果您没有看到效果，请提交一个issue给我们，我们将确保您的模型得到支持 [https://github.com/pytorch/torchdynamo/issues](https://github.com/pytorch/torchdynamo/issues)
 
-After all, we can’t claim we’re created a breadth-first unless **YOUR** models actually run faster.
+毕竟，除非 **您的模型** 实际运行得更快，否则我们不能声称我们创建了一个广度优先的编译器。
 
 ## FAQs  
 
-1. **What is PT 2.0?**  
-2.0 is the latest PyTorch version. PyTorch 2.0 offers the same eager-mode development experience, while adding a compiled mode via torch.compile. This compiled mode has the potential to speedup your models during training and inference.
+1. **什么是PT 2.0?**  
+2.0 是最新的 PyTorch 版本。PyTorch 2.0 提供了相同的 eager-mode 开发体验，同时通过 torch.compile 添加了编译模式。此编译模式有可能在训练和推理期间加速您的模型。
 
-2. **Why 2.0 instead of 1.14?**  
-PyTorch 2.0 is what 1.14 would have been. We were releasing substantial new features that we believe change how you meaningfully use PyTorch, so we are calling it 2.0 instead.
+2. **为什么是 2.0 而不是 1.14?**  
+PyTorch 2.0 是 1.14 的升级版。我们发布了大量新功能，这些功能改变了您使用 PyTorch 的方式，因此我们称之为 2.0。
 
-3. **How do I install 2.0? Any additional requirements?**
+3. **如何安装 2.0？有任何额外要求吗？**
 
-    Install the latest nightlies:
+    安装最新的 nightlies:
 
     CUDA 11.8<br>
 
@@ -451,15 +455,17 @@ PyTorch 2.0 is what 1.14 would have been. We were releasing substantial new feat
     pip3 install numpy --pre torch torchvision torchaudio --force-reinstall --index-url https://download.pytorch.org/whl/nightly/cpu
     ```  
 
-4. **Is 2.0 code backwards-compatible with 1.X?**  
-Yes, using 2.0 will not require you to modify your PyTorch workflows. A single line of code `model = torch.compile(model)` can optimize your model to use the 2.0 stack, and smoothly run with the rest of your PyTorch code. This is completely opt-in, and you are not required to use the new compiler.
+4. **2.0 代码与 1.X 兼容吗？**  
+是的，使用 2.0 不需要修改您的 PyTorch 工作流程。只需一行代码 `model = torch.compile(model)` 就可以优化您的模型以使用 2.0 堆栈，并与您的其他 PyTorch 代码顺利运行。这是完全可选的，您不需要必须使用新的编译器。
 
-5. **Is 2.0 enabled by default?**  
-2.0 is the name of the release. torch.compile is the feature released in 2.0, and you need to explicitly use torch.compile.
+5. **2.0 默认启用吗?**  
+2.0 是发布的名称。torch.compile 是 2.0 中发布的功能，您需要显式使用 torch.compile。
 
-6. **How do I migrate my PT1.X code to PT2.0?**  
-Your code should be working as-is without the need for any migrations. If you want to use the new Compiled mode feature introduced in 2.0, then you can start by optimizing your model with one line: `model = torch.compile(model)`.  
-While the speedups are primarily observed during training, you can also use it for inference if your model runs faster than eager mode.
+6. **如何将我的 PT1.X 代码迁移到 PT2.0?**  
+您的代码应该可以按原样工作，无需任何迁移。如果您想使用 2.0 中引入的新编译模式功能，可以通过一行代码开始优化您的模型： `model = torch.compile(model)`。
+
+虽然主要在训练期间观察到加速，但如果您的模型比 eager 模式运行得更快，您也可以在推理中使用它。
+
 
     ```python
     import torch
@@ -474,44 +480,45 @@ While the speedups are primarily observed during training, you can also use it f
       return model(\*\*input)
     ```
 
-7. **Why should I use PT2.0 instead of PT 1.X?**  
-See answer to Question (2).
+7. **为什么我应该使用 PT2.0 而不是 PT 1.X?**  
+请参阅问题 (2) 的答案。
 
-8. **What is my code doing differently when running PyTorch 2.0?**  
-Out of the box, PyTorch 2.0 is the same as PyTorch 1.x, your models run in eager-mode i.e. every line of Python is executed one after the other.  
-In 2.0, if you wrap your model in `model = torch.compile(model)`, your model goes through 3 steps before execution:  
-    1. Graph acquisition: first the model is rewritten as blocks of subgraphs. Subgraphs which can be compiled by TorchDynamo are “flattened” and the other subgraphs (which might contain control-flow code or other unsupported Python constructs) will fall back to Eager-Mode.  
-    2. Graph lowering: all the PyTorch operations are decomposed into their constituent kernels specific to the chosen backend.  
-    3. Graph compilation, where the kernels call their corresponding low-level device-specific operations.  
+8. **在运行 PyTorch 2.0 时，我的代码有什么不同?**  
+开箱即用，PyTorch 2.0 与 PyTorch 1.x 相同，您的模型在 eager-mode 下运行，即每行 Python 代码依次执行。
+在 2.0 中，如果您将模型包装在 model = torch.compile(model) 中，您的模型在执行前会经过 3 个步骤：
 
-9. **What new components does PT2.0 add to PT?**  
-    - **TorchDynamo** generates FX Graphs from Python bytecode. It maintains the eager-mode capabilities using [guards](https://pytorch.org/docs/stable/torch.compiler_guards_overview.html#caching-and-guards-overview) to ensure the generated graphs are valid ([read more](https://dev-discuss.pytorch.org/t/torchdynamo-an-experiment-in-dynamic-python-bytecode-transformation/361))  
-    - **AOTAutograd** to generate the backward graph corresponding to the forward graph captured by TorchDynamo ([read more](https://dev-discuss.pytorch.org/t/torchdynamo-update-6-training-support-with-aotautograd/570)).  
-    - **PrimTorch** to decompose complicated PyTorch operations into simpler and more elementary ops ([read more](https://dev-discuss.pytorch.org/t/tracing-with-primitives-update-2/645)).  
-    - **\[Backend]** Backends integrate with TorchDynamo to compile the graph into IR that can run on accelerators. For example, **TorchInductor** compiles the graph to either **Triton** for GPU execution or **OpenMP** for CPU execution ([read more](https://dev-discuss.pytorch.org/t/torchinductor-a-pytorch-native-compiler-with-define-by-run-ir-and-symbolic-shapes/747)).  
+    1. 图获取：首先将模型重写为子图块。可以由 TorchDynamo 编译的子图将被“展平”，而其他子图（可能包含控制流代码或其他不支持的 Python 构造）将回退到 Eager-Mode。
+    2. 图降级：所有 PyTorch 操作都分解为特定于所选后端的基本内核。
+    3. 图编译：内核调用其相应的低级设备特定操作。
+
+9. **PT2.0 为 PT 添加了哪些新组件?**  
+    - **TorchDynamo** 从 Python 字节码生成 FX 图。它使用 [guards](https://pytorch.org/docs/stable/torch.compiler_guards_overview.html#caching-and-guards-overview) 保持 eager-mode 功能，以确保生成的图是有效的 ([了解更多](https://dev-discuss.pytorch.org/t/torchdynamo-an-experiment-in-dynamic-python-bytecode-transformation/361))  
+    - **AOTAutograd** 生成与 TorchDynamo 捕获的前向图对应的后向图 ([了解更多](https://dev-discuss.pytorch.org/t/torchdynamo-update-6-training-support-with-aotautograd/570)).  
+    - **PrimTorch** 将复杂的 PyTorch 操作分解为更简单和更基本的操作 ([了解更多](https://dev-discuss.pytorch.org/t/tracing-with-primitives-update-2/645)).  
+    - **\[Backend]** 后端与 TorchDynamo 集成，将图编译为可以在加速器上运行的 IR。例如，**TorchInductor** 将图编译为 **Triton** 以进行 GPU 执行或 **OpenMP** 以进行 CPU 执行 ([了解更多](https://dev-discuss.pytorch.org/t/torchinductor-a-pytorch-native-compiler-with-define-by-run-ir-and-symbolic-shapes/747)).  
   
-10. **What compiler backends does 2.0 currently support?**  
-The default and the most complete backend is [TorchInductor](https://github.com/pytorch/pytorch/tree/master/torch/_inductor), but TorchDynamo has a growing list of backends that can be found by calling `torchdynamo.list_backends()`.  
-  
-11. **How does distributed training work with 2.0?**  
-DDP and FSDP in Compiled mode  can run up to 15% faster than Eager-Mode in FP32 and up to 80% faster in AMP precision. PT2.0 does some extra optimization to ensure DDP’s communication-computation overlap works well with Dynamo’s partial graph creation. Ensure you run DDP with static_graph=False. More details [here](https://dev-discuss.pytorch.org/t/torchdynamo-update-9-making-ddp-work-with-torchdynamo/860).  
+10. **2.0 目前支持哪些编译器后端?**  
+默认且最完整的后端是 [TorchInductor](https://github.com/pytorch/pytorch/tree/master/torch/_inductor)，但 TorchDynamo 有一个不断增长的后端列表，可以通过调用 `torchdynamo.list_backends()` 找到。
 
-12. **How can I learn more about PT2.0 developments?**  
-The [PyTorch Developers forum](http://dev-discuss.pytorch.org/) is the best place to learn about 2.0 components directly from the developers who build them.  
+11. **2.0 的分布式训练如何工作?**  
+在编译模式下，DDP 和 FSDP 在 FP32 中可以比 Eager-Mode 快 15%，在 AMP 精度中可以快 80%。PT2.0 进行了一些额外的优化，以确保 DDP 的通信计算重叠与 Dynamo 的部分图创建配合良好。确保您在运行 DDP 时将 static_graph 设置为 False。更多详情请参阅 [这里](https://dev-discuss.pytorch.org/t/torchdynamo-update-9-making-ddp-work-with-torchdynamo/860)。
 
-13. **Help my code is running slower with 2.0’s Compiled Mode!**  
-The most likely reason for performance hits is too many graph breaks. For instance, something innocuous as a print statement in your model’s forward triggers a graph break. We have ways to diagnose these  - read more [here](https://pytorch.org/docs/stable/torch.compiler_faq.html#why-am-i-not-seeing-speedups).  
+12. **如何了解更多关于 PT2.0?**  
+[PyTorch Developers forum](http://dev-discuss.pytorch.org/) 是了解 2.0 组件的最佳地方，您可以直接从构建它们的开发者那里获取信息。
 
-14. **My previously-running code is crashing with 2.0’s Compiled Mode! How do I debug it?**  
-Here are some techniques to triage where your code might be failing, and printing helpful logs: [https://pytorch.org/docs/stable/torch.compiler_faq.html#why-is-my-code-crashing](https://pytorch.org/docs/stable/torch.compiler_faq.html#why-is-my-code-crashing).  
+13. **我的代码在 2.0 的编译模式下运行得更慢!**  
+性能下降的最可能原因是图中断过多。例如，模型前向中的一个无害的 print 语句会触发图中断。我们有方法诊断这些问题 - 请阅读 [这里](https://pytorch.org/docs/stable/torch.compiler_faq.html#why-am-i-not-seeing-speedups)。
+
+14. **我的代码在 2.0 的编译模式下崩溃了！如何调试?**  
+这里有一些技术可以帮助您排查代码可能失败的地方，并打印有用的日志：[https://pytorch.org/docs/stable/torch.compiler_faq.html#why-is-my-code-crashing](https://pytorch.org/docs/stable/torch.compiler_faq.html#why-is-my-code-crashing)
 
 ## Ask the Engineers: 2.0 Live Q&A Series
 
-We will be hosting a series of live Q&A sessions for the community to have deeper questions and dialogue with the experts. Please check back to see the full calendar of topics throughout the year. If you are unable to attend: 1) They will be recorded for future viewing and 2) You can attend our Dev Infra Office Hours every Friday at 10 AM PST @ [https://github.com/pytorch/pytorch/wiki/Dev-Infra-Office-Hours](https://github.com/pytorch/pytorch/wiki/Dev-Infra-Office-Hours).
+我们将举办一系列的现场问答环节，让社区能够与专家进行更深入的问题和对话。请随时查看全年主题的完整日历。如果您无法参加：1) 这些活动将被录制以供日后观看，2) 您可以参加我们每周五上午10点（太平洋标准时间）的开发基础设施办公时间 @ [https://github.com/pytorch/pytorch/wiki/Dev-Infra-Office-Hours](https://github.com/pytorch/pytorch/wiki/Dev-Infra-Office-Hours)。
 
-Please click [here](https://pytorchconference22.splashthat.com/) to see dates, times, descriptions and links.  
+请点击 [这里](https://pytorchconference22.splashthat.com/) 查看日期、时间、描述和链接。
 
-Disclaimer: Please do not share your personal information, last name, company when joining the live sessions and submitting questions.  
+免责声明：请不要在加入现场会议和提交问题时分享您的个人信息、姓氏、公司。
 
 <table style="min-width: 350px" class="QnATable">
   <tr>
@@ -647,7 +654,7 @@ Disclaimer: Please do not share your personal information, last name, company wh
   </tr>
 </table>
 
-## Watch the Talks from PyTorch Conference
+## PyTorch Conference 相关演讲
 
 - [TorchDynamo](https://www.youtube.com/watch?v=vbtGZL7IrAw)
 - [TorchInductor](https://www.youtube.com/watch?v=vbtGZL7IrAw)
