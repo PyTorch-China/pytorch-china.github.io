@@ -1,6 +1,6 @@
 ---
 layout: get_started
-title: Start via Cloud Partners
+title: 使用云服务
 permalink: /get-started/cloud-partners/
 background-class: get-started-background
 body-class: get-started
@@ -9,7 +9,7 @@ published: true
 get-started-via-cloud: true
 ---
 
-## Start via Cloud Partners
+## 使用云服务
 
 <div class="container-fluid quick-start-module quick-starts">
   <div class="cloud-options-col">
