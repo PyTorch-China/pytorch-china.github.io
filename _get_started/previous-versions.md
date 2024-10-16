@@ -1,6 +1,6 @@
 ---
 layout: get_started
-title: Previous PyTorch Versions
+title: 历史版本
 permalink: /get-started/previous-versions/
 background-class: get-started-background
 body-class: get-started
@@ -9,11 +9,11 @@ published: true
 redirect_from: /previous-versions.html
 ---
 
-## Installing previous versions of PyTorch
+## PyTorch 历史版本安装
 
 我们建议您安装[最新版本](https://pytorch.org/get-started/locally)，但为了方便，我们也提供了旧的二进制文件和安装说明。
 
-## Commands for Versions >= 1.0.0
+## 安装命令 Versions >= 1.0.0
 
 ### v2.2.2
 

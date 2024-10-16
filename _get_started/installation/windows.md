@@ -47,8 +47,6 @@ choco install python
 
 #### pip
 
-If you installed Python by any of the recommended ways [above](#windows-python), [pip](https://pypi.org/project/pip/) will have already been installed for you.
-
 如果您通过 [上面](#windows-python) 推荐的任何方式安装了 Python，[pip](https://pypi.org/project/pip/) 已经为您安装好了。
 
 ## 安装
@@ -130,6 +128,5 @@ torch.cuda.is_available()
 4. 按照这里描述的步骤操作：[https://github.com/pytorch/pytorch#from-source](https://github.com/pytorch/pytorch#from-source)
 
 
-You can verify the installation as described [above](#windows-verification).
 您可以按照 [上面](#windows-verification) 描述的方法验证安装。
 
