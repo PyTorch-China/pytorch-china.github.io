@@ -2,7 +2,7 @@
   height: $mobile_header_height;
 
   @include full-nav-menu-desktop {
-    height: $desktop_header_height - 20px;
+    height: $desktop_header_height;
   }
 
   align-items: center;
@@ -13,9 +13,6 @@
   position: fixed;
   right: 0;
   top: 0;
-  @include full-nav-menu-desktop {
-    top: 32px;
-  }
   width: 100%;
   z-index: 9999;
 
